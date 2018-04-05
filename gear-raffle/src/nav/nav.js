@@ -3,17 +3,13 @@ import './nav.css';
 
 class Navbar extends Component
 {
-    // constructor(props)
-    // {
-    //     super(props)
-    // }
 
     render()
     {
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="/"><img src="/assets/images/IMG_7091.jpg"/> </a>
+                    {/* <a className="navbar-brand" href="/"><img src="/Users/jaredhenderson 1/Google Drive/music-gear-raffle/gear-raffle/assets/images/music-gear-logo2.jpg" alt="gear raffle logo"/> </a> */}
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -57,20 +53,20 @@ class Navbar extends Component
                             <div className="modal-body">                            
                                 
                                 
-                                <form action="" method="POST" role="form">
+                                <form action="" method="POST">
                                 
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label htmlFor="">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Username" />
+                                        <input type="text" className="form-control" id="username" placeholder="Username" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Password</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Password" />
+                                        <input type="text" className="form-control" id="username" placeholder="Password" />
                                     </div>
                                 
                                     
                                 
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" className="btn btn-primary">Login</button>
                                 </form>                                                                                        
       </div>
                             
@@ -91,7 +87,7 @@ class Navbar extends Component
                             <div className="modal-body">
 
 
-                                <form action="" method="POST" role="form">
+                                <form action="" method="POST">
 
                                     <div className="form-group">
                                         <label htmlFor="">Username</label>
@@ -103,11 +99,11 @@ class Navbar extends Component
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Password</label>
-                                        <input type="text" class="form-control" id="create-account-password" placeholder="Password" />
+                                        <input type="text" className="form-control" id="create-account-password" placeholder="Password" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Confirm Password</label>
-                                        <input type="text" class="form-control" id="create-account-confirm-password" placeholder="Confirm Password" />
+                                        <input type="text" className="form-control" id="create-account-confirm-password" placeholder="Confirm Password" />
                                     </div>
 
 
