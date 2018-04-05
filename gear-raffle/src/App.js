@@ -3,15 +3,39 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
+import Navbar from './nav/nav'
+import RaffleList from './raffle-list/raffle-list';
 
-class App extends Component {
+class App extends Component 
+{
+  constructor(props) 
+  {
+    super(props);
+  
+    this.state = {
+       "raffleItems":[{
+          url: '',
+          item: '14x6.5 Black Beauty With Imperial Lugs',
+          condition: 'Like New',
+          ticketPrice: 10,
+       }]
+    }
+    this.addRaffle = this.addRaffle.bind(this);
+  }
+
+  addRaffle(raffle)
+  {
+    const raffleItems = [...this.state.raffleItems];
+    raffleItems.push({raffleItems});
+  }
+  
   render() {
     return (
       <Router>
       <div>
-        {/* <Nav /> */}
+        <Navbar />
         <Switch>
-          <Route exact path='/' component={Main} />
+          <Route exact path='/' component={() => <RaffleList raffles={this.state.raffleItems} />} />
             {/* <Route exact path='/main' component={Main} /> */}
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}
