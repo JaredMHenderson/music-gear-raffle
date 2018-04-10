@@ -14,7 +14,7 @@
     "clean": "rm -r ../gear-raffle-backend/build",
     "build": "react-scripts build",
     "postbuild": "mv ./build ../gear-raffle-backend",
-    "complete": "npm run clean && npm run build",
+    "complete": "npm run clean && react-scripts build && rm -r ../gear-raffle-backend/public/ && cp -r build/ ../gear-raffle-backend/public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
