@@ -11,7 +11,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "clean": "rm -r ../gear-raffle-backend/build",
     "build": "react-scripts build",
+    "postbuild": "mv ./build ../gear-raffle-backend",
+    "complete": "npm run clean && npm run build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

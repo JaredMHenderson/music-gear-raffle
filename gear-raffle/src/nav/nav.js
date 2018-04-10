@@ -74,12 +74,12 @@ class Navbar extends Component
                     </div>
                 </div>
 
-                {/* <!-- LOGIN Modal --> */}
+                {/* <!-- Create Account Modal --> */}
                 <div className="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Login</h5>
+                                <h5 className="modal-title" id="exampleModalLabel">Create Account</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
