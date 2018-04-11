@@ -26,10 +26,32 @@ class Navbar extends Component
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Find A Raffle</a>
                             </li>
+
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Sell Your Gear</a>
+                            </li>
+
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Browse By Category</a>
+
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
+                                    <a className="dropdown-item" data-toggle="" data-target="">Electric Guitars</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Acoustic Guitars</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Bass Guitars</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Amps</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Effects and Pedals</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Drums and Percussion</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Pro Audio</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Keyboards and Synths</a>
+                                    <a className="dropdown-item" data-toggle="" data-target="">Other</a>
+                                </div>
+                            </li>
+
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Join/Login
-        </a>
+                    </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
                                     <a className="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
                                     <a className="dropdown-item" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
