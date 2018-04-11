@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './nav.css';
-
+import logo from "./logo.png";
 class Navbar extends Component
 {
 
@@ -8,8 +8,12 @@ class Navbar extends Component
     {
         return(
             <div>
+
+                
+
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    {/* <a className="navbar-brand" href="/"><img src="/Users/jaredhenderson 1/Google Drive/music-gear-raffle/gear-raffle/assets/images/music-gear-logo2.jpg" alt="gear raffle logo"/> </a> */}
+
+                    <a className="navbar-brand" href="/"><img id="logo" src={ logo } alt="gear raffle logo"/> </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

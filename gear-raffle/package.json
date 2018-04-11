@@ -10,7 +10,7 @@
     "react-scripts": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3006 react-scripts start",
     "clean": "rm -r ../gear-raffle-backend/build",
     "build": "react-scripts build",
     "postbuild": "mv ./build ../gear-raffle-backend",
