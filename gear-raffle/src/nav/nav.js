@@ -17,10 +17,13 @@ class Navbar extends Component
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Find A Raffle</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/create-raffle">Create Raffle</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +44,7 @@ class Navbar extends Component
   </div>
 </nav>
                 {/* <!-- LOGIN Modal --> */}
-                <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -75,7 +78,7 @@ class Navbar extends Component
                 </div>
 
                 {/* <!-- Create Account Modal --> */}
-                <div className="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="createAccountModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -91,11 +94,11 @@ class Navbar extends Component
 
                                     <div className="form-group">
                                         <label htmlFor="">Username</label>
-                                        <input type="text" class="form-control" id="create-acount-username" placeholder="Username" />
+                                        <input type="text" className="form-control" id="create-acount-username" placeholder="Username" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Email</label>
-                                        <input type="text" class="form-control" id="create-acount-email" placeholder="Email" />
+                                        <input type="text" className="form-control" id="create-acount-email" placeholder="Email" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Password</label>

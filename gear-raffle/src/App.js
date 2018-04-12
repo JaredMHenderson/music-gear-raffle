@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
 import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
+import RaffleCreator from './raffle-creator/raffle-creator'
 
 class App extends Component 
 {
@@ -37,7 +38,7 @@ class App extends Component
         <Switch>
           <Route exact path='/' component={() => <RaffleList raffles={this.state.raffleItems} />} />
             <Route exact path='/main' component={Main} />
-            {/* <Route exact path='/login' component={Login} /> */}
+            <Route exact path='/create-raffle' component={RaffleCreator} />
             {/* <Route exact path='/signout' component={Signout} /> */}
           </Switch>
 
