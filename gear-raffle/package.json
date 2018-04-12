@@ -9,9 +9,15 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.1"
   },
+
+  "proxy": "http://localhost:3000",
+  
   "scripts": {
     "start": "react-scripts start",
+    "clean": "rm -r ../gear-raffle-backend/build",
     "build": "react-scripts build",
+    "postbuild": "mv ./build ../gear-raffle-backend",
+    "complete": "npm run clean && react-scripts build && rm -r ../gear-raffle-backend/public/ && cp -r build/ ../gear-raffle-backend/public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
