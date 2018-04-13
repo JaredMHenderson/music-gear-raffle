@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import "./login.css";
 
 export default class login extends Component {
@@ -7,19 +8,18 @@ export default class login extends Component {
     return (
       <div>
           <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Join/Login
-                                </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
-                                    <a className="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
-                                    <a className="dropdown-item" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
-                                    <div className="dropdown-divider"></div>
-                                    <a className="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li> 
-      </div>
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Join/Login
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
+                    <a className="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
+                    <a className="dropdown-item" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> 
 
-      {/* <!-- LOGIN Modal --> */}
+            {/* <!-- LOGIN Modal --> */}
       <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
           <div className="modal-content">
@@ -52,6 +52,7 @@ export default class login extends Component {
           </div>
       </div>
   </div>
+      </div>
     )
   }
 }

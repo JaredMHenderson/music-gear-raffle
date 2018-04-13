@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './nav.css';
 import logo from "./logo.png";
+import Browse from '../Browse-menu';
+import Create from '../Create-account';
+import Login from '../login';
 class Navbar extends Component
 {
 
@@ -27,6 +30,12 @@ class Navbar extends Component
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Sell Your Gear</a>
                             </li>
+
+                            <Browse/>
+
+                            <Create/>
+
+                            <Login/>
 
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,7 +73,7 @@ class Navbar extends Component
                         </form>
   </div>
 </nav>
-                {/* <!-- LOGIN Modal --> */}
+                {/* <!-- LOGIN Modal -->
                 <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -98,7 +107,7 @@ class Navbar extends Component
                     </div>
                 </div>
 
-                <!-- Create Account Modal -->
+                 Create Account Modal 
                 <div className="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -139,7 +148,7 @@ class Navbar extends Component
                             
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )  
     }

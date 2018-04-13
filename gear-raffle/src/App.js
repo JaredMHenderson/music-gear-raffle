@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
 import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
+import Footer from "./Footer";
 
 class App extends Component 
 {
@@ -40,8 +41,10 @@ class App extends Component
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}
           </Switch>
-
+          <Footer/>
         </div>
+
+        
 
 
 

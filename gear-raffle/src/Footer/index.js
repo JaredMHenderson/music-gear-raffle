@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => (
     <footer>
-        <h2>&copy; Music Gear Raffle</h2>
+        <h2>&copy;Copyright 2018 Music Gear Raffle</h2>
     </footer>
 )
 

@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+require('./routes/billingRoutes')(app);
+
 app.use(express.static('public'))
 var bodyParser = require('body-parser');
 
