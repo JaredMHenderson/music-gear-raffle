@@ -1,6 +1,6 @@
 const RaffleItem = require('../models/raffle-item')
 
-module.exports = (app) => 
+module.exports = (app) =>
 {
     app.get('/api/raffle-items', (req, res) => {
         RaffleItem.find({},(err, raffleItems) =>
@@ -11,17 +11,17 @@ module.exports = (app) =>
                 res.status(201).json(raffleItems);
             }
         });
-        
+
     });
     app.get('/api/raffleItem/:id', (req, res) => {
         RaffleItem.find({ _id: req.params.id }, (err, raffleItem) => {
             if (err) {
                 res.status(500).json((err));
             } else {
-                res.status(201).json(raffleItems);
+                res.status(201).json(raffleItem);
             }
         });
-        
+
     });
     app.post('/api/raffleItem', (req, res) => {
         (new RaffleItem(req.body)).save((err, raffleItem) => {
@@ -39,7 +39,7 @@ module.exports = (app) =>
                res.status(500).json((err));
            } else {
                res.status(201).json(raffleItem);
-           } 
+           }
        });
     });
 
@@ -53,6 +53,5 @@ module.exports = (app) =>
         });
         res.end('Request received: delte - api/raffleItem/:id');
     });
-    
-}
 
+}
