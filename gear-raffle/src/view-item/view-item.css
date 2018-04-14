@@ -1,0 +1,29 @@
+.imgContainer {
+  background-color: white;
+  margin-top: 1%;
+  padding: 1%
+}
+
+img {
+  width: 100%;
+}
+
+.view-item {
+  background-color: #d3d3d3;
+}
+
+.b-white {
+  background-color: white;
+  /* margin: 1%; */
+
+}
+
+.item-price {
+  background-color: white;
+  margin-top: 1%;
+  display: inline-block;
+}
+
+.item-description {
+  /* margin-right: 1%; */
+}
