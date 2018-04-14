@@ -24,8 +24,9 @@ class Navbar extends Component
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                             </li>
+
                             
                         
 
@@ -56,6 +57,7 @@ class Navbar extends Component
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Join/Login
                                 </a>
+
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
                                     <a className="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
                                     <a className="dropdown-item" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
@@ -69,10 +71,13 @@ class Navbar extends Component
                             <input className="form-control mr-sm-2" type="search" placeholder="Find A Raffle" aria-label="Search"/>
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
+
   </div>
 </nav>
                 {/* <!-- LOGIN Modal -->
                 <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -107,6 +112,7 @@ class Navbar extends Component
 
                  Create Account Modal 
                 <div className="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -122,11 +128,11 @@ class Navbar extends Component
 
                                     <div className="form-group">
                                         <label htmlFor="">Username</label>
-                                        <input type="text" class="form-control" id="create-acount-username" placeholder="Username" />
+                                        <input type="text" className="form-control" id="create-acount-username" placeholder="Username" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Email</label>
-                                        <input type="text" class="form-control" id="create-acount-email" placeholder="Email" />
+                                        <input type="text" className="form-control" id="create-acount-email" placeholder="Email" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="">Password</label>
