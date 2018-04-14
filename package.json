@@ -1,0 +1,19 @@
+{
+  "name": "music-gear-raffle",
+  "version": "1.0.0",
+  "description": "NW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaredMHenderson/music-gear-raffle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaredMHenderson/music-gear-raffle/issues"
+  },
+  "homepage": "https://github.com/JaredMHenderson/music-gear-raffle#readme"
+}
