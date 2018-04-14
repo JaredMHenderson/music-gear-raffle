@@ -14,6 +14,5 @@ module.exports = app => {
       description: '$5 for 5 credits',
       source: token
     });
-    res.send("Post request for stripe");
   });
 }
