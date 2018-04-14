@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-app.use(express.static('public'))
+app.use(express.static('./build'))
 var bodyParser = require('body-parser');
 
 
@@ -23,7 +23,7 @@ mongoose.connect('mongodb://localhost/raffleItems').then(
     },
     err => {
         console.log(err);
-        
+
     }
 );
 
@@ -36,6 +36,5 @@ require('./routes/routes')(app);
 
 
 app.get('/',  (req, res) => {
-    res.send('Hello World')
+    res.sendFile('./build/index.html');
 })
-

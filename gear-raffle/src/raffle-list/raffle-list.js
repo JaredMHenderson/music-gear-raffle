@@ -4,14 +4,14 @@ import RaffleCard from '../raffle-card/raffle-card';
 
 
 
-export default class RaffleList extends Component 
+export default class RaffleList extends Component
 {
-    constructor(props) 
+    constructor(props)
     {
       super(props)
-         
+
     }
-    render() 
+    render()
     {
         console.log('here are my props',this.props);
         return (
@@ -19,7 +19,7 @@ export default class RaffleList extends Component
                 {
                     this.props.raffles.map((raffle)=>{
                         return (
-                            <RaffleCard raffle={raffle}/>
+                            <RaffleCard raffle={raffle} history={this.props.history}/>
                         )
                     })
                 }
@@ -27,6 +27,3 @@ export default class RaffleList extends Component
         );
         }
     }
-
-
-
