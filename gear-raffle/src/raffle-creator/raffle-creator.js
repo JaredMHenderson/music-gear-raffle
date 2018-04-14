@@ -59,26 +59,24 @@ export default class RaffleCreator extends Component
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="inputEmail4">Item Name</label>
-                            <input onKeyUp={this.onKeyUpItemName} type="email" className="form-control" id="inputEmail" placeholder="Item Name" />
-    </div>
+                            <input onKeyUp={this.onKeyUpItemName} type="text" className="form-control" id="inputItemName" placeholder="Item Name" />
+                        </div>
                             <div className="form-group col-md-6">
                             <label htmlFor="inputPassword4">Condition</label>
-                                <input onKeyUp={this.onKeyUpCondition} type="text" className="form-control" id="inputPassword4" placeholder="Condition" />
-    </div>
+                                <input onKeyUp={this.onKeyUpCondition} type="text" className="form-control" id="inputCondition" placeholder="Condition" />
+                        </div>
                             </div>
                             <div className="form-group">
                         <label htmlFor="inputAddress">Image URL</label>
-                                <input onKeyUp={this.onKeyUpimageUrl} type="text" className="form-control" id="inputAddress" placeholder="Image URL" />
-  </div>
+                                <input onKeyUp={this.onKeyUpimageUrl} type="text" className="form-control" id="inputImageUrl" placeholder="Image URL" />
+                        </div>
                                 <div className="form-group">
                         <label htmlFor="inputAddress2">Ticket Price</label>
-                                    <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputAddress2" placeholder="Ticket Price" />
-  </div>
-                                   
-                                            
-                                                <button onClick={this.onClickSubmit}  id ="submit-button" className="btn btn-primary">Create Raffle</button>
-
-                                        </div>
+                                    <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputTicketPrice" placeholder="Ticket Price" />
+                                    
+                        </div>            
+                                <button onClick={this.onClickSubmit}  id ="submit-button" className="btn btn-primary">Create Raffle</button>
+                        </div>
         )
     }
 

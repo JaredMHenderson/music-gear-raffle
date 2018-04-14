@@ -28,7 +28,7 @@ class Navbar extends Component
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Join/Login
-        </a>
+                                    </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">                                   
                                     <a className="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
                                     <a className="dropdown-item" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
@@ -40,9 +40,9 @@ class Navbar extends Component
                         <form className="form-inline my-2 my-lg-0">
                             <input className="form-control mr-sm-2" type="search" placeholder="Find A Raffle" aria-label="Search"/>
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+                        </form>
+                    </div>
+                    </nav>
                 {/* <!-- LOGIN Modal --> */}
                 <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
@@ -71,7 +71,7 @@ class Navbar extends Component
                                 
                                     <button type="submit" className="btn btn-primary">Login</button>
                                 </form>                                                                                        
-      </div>
+                            </div>
                             
                         </div>
                     </div>
