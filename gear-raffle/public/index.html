@@ -40,7 +40,6 @@
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
-
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
 
@@ -48,4 +47,18 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-</html>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAyPlniB3dWGNGbj6WQry2K3aBh8c5Ycqw",
+    authDomain: "music-gear-raffle.firebaseapp.com",
+    databaseURL: "https://music-gear-raffle.firebaseio.com",
+    projectId: "music-gear-raffle",
+    storageBucket: "",
+    messagingSenderId: "12287784229"
+  };
+  firebase.initializeApp(config);
+ </script>
+ </html>
