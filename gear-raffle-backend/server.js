@@ -2,7 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-app.use(express.static('./build'))
+require('./routes/billing-routes')(app);
+
+app.use(express.static('public'))
+
+app.use(express.static('./build'))>>>>>>> development
 var bodyParser = require('body-parser');
 
 
@@ -36,5 +40,9 @@ require('./routes/routes')(app);
 
 
 app.get('/',  (req, res) => {
+
+});
+
+
     res.sendFile('./build/index.html');
 })

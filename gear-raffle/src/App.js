@@ -5,10 +5,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
 import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
+
+import Footer from "./footer";
+
 import RaffleCreator from './raffle-creator/raffle-creator';
 import ViewItem from './view-item/view-item';
 import createHistory from 'history/createBrowserHistory';
 import Axios from 'axios';
+
 
 
 class App extends Component {
@@ -16,7 +20,9 @@ class App extends Component {
     super(props);
 
     this.state = {
+
       raffleItems: []
+
     }
     this.addRaffle = this.addRaffle.bind(this)
     this.history = createHistory();
@@ -56,8 +62,12 @@ class App extends Component {
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}
           </Switch>
+          <Footer/>
 
+         
         </div>
+
+        
 
 
 

@@ -1,7 +1,31 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './raffle-card.css';
+
+import StripeCheckout from 'react-stripe-checkout';
+import keys from '../config/keys.js';
+import axios from 'axios';
+
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // import $ from 'jquery';
+
+
+
+
+
+    
+    handleToken = async (token) => {
+        const res = await axios.post('/api/stripe', token);
+        console.log(res);
+        }
+
+    testRequest = async () => {
+        const res = await axios.get("/");
+        console.log(res);
+    }
+    
+    componentDidMount(){
+        this.testRequest();
+    }
 
 
 
@@ -25,6 +49,8 @@ export default class RaffleCard extends Component {
         console.log(this.props);
         this.setState({ itemId, goToItem: true });
     }
+      
+      
 
 
 
@@ -43,7 +69,13 @@ export default class RaffleCard extends Component {
                     <p><span>Condition:</span>{condition}</p>
                     <p><span>Ticket Price: $</span>{ticketPrice}</p>
                     <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
+
+                          <StripeCheckout
+                            token={this.handleToken}
+                            stripeKey={keys.stripePublishableKey}
+                            amount={ticketPrice}/>
                 </div>
+
             </div>
 
         );
