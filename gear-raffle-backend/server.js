@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-require('./routes/billingRoutes')(app);
+require('./routes/billing-routes')(app);
 
 app.use(express.static('public'))
 var bodyParser = require('body-parser');
@@ -39,5 +39,5 @@ require('./routes/routes')(app);
 
 app.get('/',  (req, res) => {
     res.send('Hello World')
-})
+});
 

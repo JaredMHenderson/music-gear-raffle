@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
 import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
-import Footer from "./Footer";
+import Footer from "./footer";
 
 class App extends Component 
 {
@@ -18,7 +18,7 @@ class App extends Component
          imageUrl: 'https://media.sweetwater.com/api/i/q-82__ha-3d0905afc12f193c__hmac-d8d5a6ef1d7361381c0b3dca237102cb195bf41e/images/items/750/LB417-large.jpg',
           itemName: '14x6.5 Black Beauty With Imperial Lugs',
           condition: 'Like New',
-          ticketPrice: 10,
+          ticketPrice: 1000,   //Stripe uses 1 as 1 cent.
        }]
     }
     this.addRaffle = this.addRaffle.bind(this);
@@ -42,6 +42,8 @@ class App extends Component
             {/* <Route exact path='/signout' component={Signout} /> */}
           </Switch>
           <Footer/>
+
+         
         </div>
 
         

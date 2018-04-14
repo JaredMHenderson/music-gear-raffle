@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './nav.css';
 import logo from "./logo.png";
-import Browse from '../Browse-menu';
-import Create from '../Create-account';
+import Browse from '../browse-menu';
+import Create from '../create-account';
 import Login from '../login';
 class Navbar extends Component
 {
