@@ -21,7 +21,7 @@
     "start": "PORT=3006 react-scripts start",
     "clean": "rm -r ../gear-raffle-backend/build",
 
-   
+   "deploy":" firebase deploy",
     "build": "react-scripts build",
     "postbuild": "mv ./build ../gear-raffle-backend",
     "complete": "npm run clean && react-scripts build && rm -r ../gear-raffle-backend/public/ && cp -r build/ ../gear-raffle-backend/public",
