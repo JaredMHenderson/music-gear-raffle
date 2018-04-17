@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './raffle-creator.css'
+var admin = require('firebase-admin');
+
 
 export default class RaffleCreator extends Component
 {

@@ -9,6 +9,7 @@ import RaffleCreator from './raffle-creator/raffle-creator';
 import ViewItem from './view-item/view-item';
 import createHistory from 'history/createBrowserHistory';
 import Axios from 'axios';
+var admin = require('firebase-admin');
 
 
 class App extends Component {

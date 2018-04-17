@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './view-item.css';
 import axios from 'axios';
+var admin = require('firebase-admin');
+
 
 class ViewItem extends Component
 {

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+var admin = require('firebase-admin');
 
 app.use(express.static('./build'))
 var bodyParser = require('body-parser');

@@ -3,6 +3,9 @@ import './raffle-card.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // import $ from 'jquery';
 
+var admin = require('firebase-admin');
+
+
 
 
 

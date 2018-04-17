@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './nav.css';
 import logo from '../musicGearLogo.png';
+var admin = require('firebase-admin');
 
 class Navbar extends Component
 {
