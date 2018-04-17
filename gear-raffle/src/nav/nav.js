@@ -43,7 +43,6 @@ class Navbar extends Component
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </div>
-                    </nav>
                 {/* <!-- LOGIN Modal --> */}
                 <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
@@ -77,8 +76,7 @@ class Navbar extends Component
                         </div>
 
                     </div>
-                </li>
-              </ul>
+           
 
               <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Find A Raffle" aria-label="Search"/>
