@@ -21,24 +21,34 @@ export default class RaffleCard extends Component {
             itemId: null
         };
     };
-    componentWillMount(){
-        this.testRequest();
-    }
-    handleToken = async (token) => {
-    const res = await axios.post('/api/stripe', token);
-    console.log(res);
-    }
+    // componentWillMount(){
+    //     this.testRequest();
+    // }
+    // handleToken (token) {
+    //     axios.post('/api/stripe', {stripe: token}).then((data)=>{
+    //          console.log(data);
+    // });
+    onToken(token) {
+        console.log(token)
+        const userData = JSON.stringify(token);
+        axios.post('/api/stripe', {userData: userData}).then(response => {
+            console.log('Lookie the response',response);
+            console.log(`We are in business, ${response.email}`);
+          
+        });
+      };
 
-    testRequest = async () => {
-        const res = await axios.get("/"); 
-        console.log(res);
-    }
+
+    // testRequest = async () => {
+    //     const res = await axios.get("/"); 
+    //     console.log(res);
+    // }
     
     
 
     
 
-    _getItem(event) {
+    _getItem(event){
 
         console.log("Clicked!!");
         let itemId = event.target.attributes["data-id"].value;
@@ -68,7 +78,7 @@ export default class RaffleCard extends Component {
                     <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
 
                           <StripeCheckout
-                            token={this.handleToken}
+                            token={this.onToken}
                             stripeKey={keys.stripePublishableKey}
                             amount={ticketPrice}/>
                 </div>

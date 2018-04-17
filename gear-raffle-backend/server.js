@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
 
-require('./routes/billing-routes')(app);
 
 app.use(express.static('public'))
 
 app.use(express.static('./build'))
-var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+require('./routes/billing-routes')(app);
 
 
 const port = 3000;
@@ -32,7 +34,6 @@ mongoose.connect('mongodb://localhost/raffleItems').then(
 );
 
 
-app.use(bodyParser.json());
 
 require('./routes/routes')(app);
 
@@ -40,9 +41,9 @@ require('./routes/routes')(app);
 
 
 app.get('/',  (req, res) => {
-
+    res.sendFile('./build/index.html');
 });
 
 
-    res.sendFile('./build/index.html');
+    
 
