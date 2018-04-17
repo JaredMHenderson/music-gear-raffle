@@ -6,7 +6,7 @@ export default class RaffleCreator extends Component
 
     constructor(props) {
       super(props)
-    
+
       this.state = {
          itemName: null,
          condition: null,
@@ -24,7 +24,7 @@ export default class RaffleCreator extends Component
     onKeyUpItemName(event){
         this.setState({ ...this.state, itemName: event.target.value });
     }
-    
+
     onKeyUpCondition(event){
         this.setState({ ...this.state, condition: event.target.value });
     }
@@ -48,38 +48,32 @@ export default class RaffleCreator extends Component
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
-        
+
     }
 
-    render()
-    {
-        return(
-            <div>
-                
-                    <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="inputEmail4">Item Name</label>
-                            <input onKeyUp={this.onKeyUpItemName} type="email" className="form-control" id="inputEmail" placeholder="Item Name" />
-    </div>
-                            <div className="form-group col-md-6">
-                            <label htmlFor="inputPassword4">Condition</label>
-                                <input onKeyUp={this.onKeyUpCondition} type="text" className="form-control" id="inputPassword4" placeholder="Condition" />
-    </div>
-                            </div>
-                            <div className="form-group">
-                        <label htmlFor="inputAddress">Image URL</label>
-                                <input onKeyUp={this.onKeyUpimageUrl} type="text" className="form-control" id="inputAddress" placeholder="Image URL" />
-  </div>
-                                <div className="form-group">
-                        <label htmlFor="inputAddress2">Ticket Price</label>
-                                    <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputAddress2" placeholder="Ticket Price" />
-  </div>
-                                   
-                                            
-                                                <button onClick={this.onClickSubmit}  id ="submit-button" className="btn btn-primary">Create Raffle</button>
-
-                                        </div>
-        )
+    render() {
+      return (
+            <div className="container raffleCreator">
+              <div className="form-row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputEmail4">Item Name</label>
+                    <input onKeyUp={this.onKeyUpItemName} type="text" className="form-control" id="inputEmail" placeholder="Item Name" />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputPassword4">Condition</label>
+                    <input onKeyUp={this.onKeyUpCondition} type="text" className="form-control" id="inputPassword4" placeholder="Condition" />
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputAddress">Image URL</label>
+                  <input onKeyUp={this.onKeyUpimageUrl} type="text" className="form-control" id="inputAddress" placeholder="Image URL" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputAddress2">Ticket Price</label>
+                  <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputAddress2" placeholder="Ticket Price" />
+              </div>
+              <button onClick={this.onClickSubmit}  id ="submit-button" className="btn btn-dark">Create Raffle</button>
+            </div>
+      )
     }
-
 }
