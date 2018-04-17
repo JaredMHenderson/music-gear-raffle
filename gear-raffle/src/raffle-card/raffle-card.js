@@ -29,7 +29,7 @@ export default class RaffleCard extends Component {
 
 
     render() {
-        const { imageUrl, itemName, condition, ticketPrice, _id } = this.props.raffle;
+        const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id } = this.props.raffle;
 
         if (this.state.goToItem) {
             return <Redirect to={`/item/${this.state.itemId}`} />;
@@ -42,6 +42,9 @@ export default class RaffleCard extends Component {
                     <h5 className="card-title"><span>Item:</span>{itemName}</h5>
                     <p><span>Condition:</span>{condition}</p>
                     <p><span>Ticket Price: $</span>{ticketPrice}</p>
+                    <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
+                    <p><span>Raffle Start Date: </span>{raffleEndDate}</p>
+                    <p><span>Raffle End Date: </span>{raffleEndDate}</p>
                     <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
                 </div>
             </div>
