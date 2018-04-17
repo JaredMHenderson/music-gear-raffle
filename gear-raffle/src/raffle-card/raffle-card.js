@@ -30,9 +30,9 @@ export default class RaffleCard extends Component {
     // });
     onToken(token) {
         console.log(token)
-        const userData = JSON.stringify(token);
-        axios.post('/api/stripe', {userData: userData}).then(response => {
-            console.log('Lookie the response',response);
+        const userData = token;
+        axios.post('/api/stripe', token).then(response => {
+            console.log( '\n \n \n \n \n \n \nLookie the response',response);
             console.log(`We are in business, ${response.email}`);
           
         });

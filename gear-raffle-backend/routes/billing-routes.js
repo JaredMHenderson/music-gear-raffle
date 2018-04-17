@@ -7,7 +7,8 @@ const stripe = require('stripe')(keys.stripeSecretKey);
 module.exports = app => {
   app.post('/api/stripe', (req, res) => {
     console.log("stripe route");
-    console.log('Here is our body',req.body);
+    // console.log('Here is our body',req.body);
+    console.log(req.body);
     // 
     // res.sendStatus(200);
     // const token = req.body.token;
@@ -15,7 +16,7 @@ module.exports = app => {
       amount: 1000,
       currency: 'usd',
       description: '$5 for 5 credits',
-      source: req.body.userData.id
+      source: req.body.id
     }).then((data) => {
       console.log('Do we have data.........',data);
     // res.sendStatus('',200);
