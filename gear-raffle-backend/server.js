@@ -6,7 +6,7 @@ require('./routes/billing-routes')(app);
 
 app.use(express.static('public'))
 
-app.use(express.static('./build'))>>>>>>> development
+app.use(express.static('./build'))
 var bodyParser = require('body-parser');
 
 
@@ -45,4 +45,4 @@ app.get('/',  (req, res) => {
 
 
     res.sendFile('./build/index.html');
-})
+

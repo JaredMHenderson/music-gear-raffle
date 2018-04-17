@@ -5,60 +5,39 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from './main/Main';
 import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
-
 import Footer from "./footer";
 
-import RaffleCreator from './raffle-creator/raffle-creator';
-import ViewItem from './view-item/view-item';
-import createHistory from 'history/createBrowserHistory';
-import Axios from 'axios';
-
-
-
-class App extends Component {
-  constructor(props) {
+class App extends Component 
+{
+  constructor(props) 
+  {
     super(props);
-
+  
     this.state = {
-
-      raffleItems: []
-
+       "raffleItems":[{
+         imageUrl: 'https://media.sweetwater.com/api/i/q-82__ha-3d0905afc12f193c__hmac-d8d5a6ef1d7361381c0b3dca237102cb195bf41e/images/items/750/LB417-large.jpg',
+          itemName: '14x6.5 Black Beauty With Imperial Lugs',
+          condition: 'Like New',
+          ticketPrice: 1000,   //Stripe uses 1 as 1 cent.
+       }]
     }
-    this.addRaffle = this.addRaffle.bind(this)
-    this.history = createHistory();
+    this.addRaffle = this.addRaffle.bind(this);
   }
 
-  componentDidMount() {
-    Axios.get("/api/raffle-items/")
-      .then(
-        (result) => {
-          console.log("Here are results: ", result);
-          this.setState({ raffleItems: result.data });
-        },
-        (error) => {
-          if (error) {
-            console.log(error);
-          }
-        }
-      )
-  }
-
-  addRaffle(raffle) {
+  addRaffle(raffle)
+  {
     const raffleItems = [...this.state.raffleItems];
-    raffleItems.push({ raffleItems });
+    raffleItems.push({raffleItems});
   }
-
+  
   render() {
     return (
-      <Router history={this.history}>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route exact path='/' component={() => <RaffleList raffles={this.state.raffleItems} history={this.history} />} />
+      <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={() => <RaffleList raffles={this.state.raffleItems} />} />
             <Route exact path='/main' component={Main} />
-            <Route exact path='/create-raffle' component={RaffleCreator} />
-            <Route path='/item' component={() => <ViewItem history={this.history} />} />
-
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}
           </Switch>
@@ -71,10 +50,9 @@ class App extends Component {
 
 
 
-      </Router>
+        </Router>
     );
   }
 }
-//pull from database
 
 export default App;

@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import './raffle-card.css';
 
@@ -9,27 +11,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 // import $ from 'jquery';
 
 
-
-
-
-    
-    handleToken = async (token) => {
-        const res = await axios.post('/api/stripe', token);
-        console.log(res);
-        }
-
-    testRequest = async () => {
-        const res = await axios.get("/");
-        console.log(res);
-    }
-    
-    componentDidMount(){
-        this.testRequest();
-    }
-
-
-
-
 export default class RaffleCard extends Component {
     constructor(props) {
         super(props);
@@ -39,7 +20,23 @@ export default class RaffleCard extends Component {
             goToItem: false,
             itemId: null
         };
+    };
+    componentWillMount(){
+        this.testRequest();
     }
+    handleToken = async (token) => {
+    const res = await axios.post('/api/stripe', token);
+    console.log(res);
+    }
+
+    testRequest = async () => {
+        const res = await axios.get("/"); 
+        console.log(res);
+    }
+    
+    
+
+    
 
     _getItem(event) {
 
