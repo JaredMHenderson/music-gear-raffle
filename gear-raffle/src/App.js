@@ -7,6 +7,7 @@ import Navbar from './nav/nav'
 import RaffleList from './raffle-list/raffle-list';
 import RaffleCreator from './raffle-creator/raffle-creator';
 import ViewItem from './view-item/view-item';
+import RunRaffle from './runRaffle/runRaffle'
 import createHistory from 'history/createBrowserHistory';
 import Axios from 'axios';
 
@@ -52,6 +53,7 @@ class App extends Component {
             <Route exact path='/main' component={Main} />
             <Route exact path='/create-raffle' component={RaffleCreator} />
             <Route path='/item' component={() => <ViewItem history={this.history} />} />
+            <Route exact path='/admin' component={() => <RunRaffle raffles={this.state.raffleItems} />} />
 
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}
