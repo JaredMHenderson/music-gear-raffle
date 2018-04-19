@@ -30,11 +30,13 @@ mongoose.connect('mongodb://localhost/raffleItems').then(
 
 app.use(bodyParser.json());
 
+
+require('./routes/billing-routes')(app);
 require('./routes/routes')(app);
 
 
 
 
-app.get('/',  (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile('./build/index.html');
 })
