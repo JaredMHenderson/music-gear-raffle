@@ -43,7 +43,7 @@ export default class RaffleCard extends Component {
                     <p><span>Condition:</span>{condition}</p>
                     <p><span>Ticket Price: $</span>{ticketPrice}</p>
                     <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
-                    <p><span>Raffle Start Date: </span>{raffleEndDate}</p>
+                    <p><span>Raffle Start Date: </span>{raffleStartDate}</p>
                     <p><span>Raffle End Date: </span>{raffleEndDate}</p>
                     <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
                 </div>
