@@ -2,13 +2,13 @@ Arguments:
   /usr/local/bin/node /usr/local/bin/yarn start
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.9.4
+  9.4.0
 
 Platform: 
   darwin x64
@@ -23,7 +23,7 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: Couldn't find a package.json file in "/Users/nmoore/Desktop/music-gear-raffle"
+  Error: Couldn't find a package.json file in "/Users/jaredhenderson 1/Google Drive/music-gear-raffle"
       at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:40048:15
       at Generator.next (<anonymous>)

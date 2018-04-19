@@ -1,40 +1,22 @@
 import React, { Component } from 'react'
-import './raffle-card.css';
+import './runRaffleCard.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import 'moment';
-
-import StripeCheckout from 'react-stripe-checkout';
-import keys from '../config/keys.js';
-import axios from 'axios';
+// import $ from 'jquery';
 
 
 
 
+class RunRaffleCard extends Component {
 
 
 
-export default class RaffleCard extends Component {
-    constructor(props) {
-        super(props);
-
-        this._getItem = this._getItem.bind(this);
-        this.state = {
-            goToItem: false,
-            itemId: null
-        };
+    state = {
+        goToItem: false,
+        itemId: null
     };
 
-    onToken(token) {
-        console.log(token);
-        const userData = token;
-        axios.post('/api/stripe', token).then(response => {
-            console.log('\n \n \n \n \n \n \nLookie the response', response);
-            console.log(`We are in business, ${response.email}`);
 
-        });
-    };
-
-    _getItem(event) {
+    _getItem = (event) => {
 
         console.log("Clicked!!");
         let itemId = event.target.attributes["data-id"].value;
@@ -43,7 +25,10 @@ export default class RaffleCard extends Component {
         this.setState({ itemId, goToItem: true });
     }
 
+    runRaffle = (event) => {
+        console.log("click worked");
 
+    }
 
     render() {
         const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id } = this.props.raffle;
@@ -51,7 +36,7 @@ export default class RaffleCard extends Component {
         if (this.state.goToItem) {
             return <Redirect to={`/item/${this.state.itemId}`} />;
         }
-        // use moment to format raffleEndDate
+
         return (
             <div className="card">
                 <img className="card-img-top" src={imageUrl} alt="Item Pic" />
@@ -62,16 +47,12 @@ export default class RaffleCard extends Component {
                     <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
                     <p><span>Raffle Start Date: </span>{raffleEndDate}</p>
                     <p><span>Raffle End Date: </span>{raffleEndDate}</p>
-                    <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
-
-
-                    <StripeCheckout
-                        token={this.onToken}
-                        stripeKey={keys.stripePublishableKey}
-                        amount={ticketPrice} />
+                    <button onClick={this.runRaffle} className="btn btn-primary" data-id={_id}>Run Raffle</button>
                 </div>
             </div>
 
         );
     }
 }
+
+export default RunRaffleCard;
