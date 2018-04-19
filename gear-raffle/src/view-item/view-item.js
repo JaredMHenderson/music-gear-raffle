@@ -13,10 +13,7 @@ class ViewItem extends Component
         itemName: null,
         condition: null,
         ticketPrice: null
-
       }
-
-
     }
 
     componentWillMount() {
@@ -36,7 +33,9 @@ class ViewItem extends Component
               imageUrl: result.data[0].imageUrl,
               itemName: result.data[0].itemName,
               condition: result.data[0].condition,
-              ticketPrice: result.data[0].ticketPrice
+              ticketPrice: result.data[0].ticketPrice,
+              raffleStartDate: result.data[0].raffleStartDate,
+              raffleEndDate: result.data[0].raffleEndDate
             });
           },
           (error) => {
@@ -47,41 +46,41 @@ class ViewItem extends Component
         )
     }
 
-
     render()
     {
-      const { itemName, imageUrl, ticketPrice, condition } = this.state;
-      if(itemName && imageUrl && ticketPrice && condition) {
+      const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate } = this.state;
+      if(itemName && imageUrl && ticketPrice && condition && raffleStartDate && raffleEndDate) {
         return (
-            <div className="view-item">
-              <div className="container">
+            <div>
+              <div className="container item">
                 <div className="row">
-                  <div className="col-md-12 item-title b-white">
-                    <h1>{ itemName }</h1>
-                    <p>Listed by me</p>
+                  <div className="col-md-1">
+                  </div>
+                  <div className="col-md-10">
+                    <h4 className="headline">{ itemName }</h4>
+                      <h6 className="condition">Condition: { condition }</h6>
+                  </div>
+                  <div className="col-md-1">
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-8 item-description">
+                  <div className="col-md-1">
+                  </div>
+                  <div className="col-md-6">
                     <img className="imgContainer" src={ imageUrl } />
                   </div>
-
-                  <div className="col-md-4 item-price">
-                    <h1>Price:{ ticketPrice }</h1>
-                    <button>Add to Cart</button>
+                  <div className="col-md-4">
+                    <h5 className="subHead">Raffle Details</h5>
+                      <p className="raffleDets">Price per ticket: { ticketPrice }</p>
+                      <p className="raffleDets">Raffle Start Date: { raffleStartDate }</p>
+                      <p className="raffleDets">Raffle End Date: { raffleEndDate }</p>
+                      <button className="btn btn-dark">Add to Cart</button>
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-8 b-white">
-                    <h2>Condition { condition }</h2>
-                    <p>Some text</p>
+                  <div className="col-md-1">
                   </div>
-
                 </div>
               </div>
-
             </div>
-
         );
       }
       else {

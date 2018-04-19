@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './nav.css';
 import logo from '../musicGearLogo.png';
 
-class Navbar extends Component {
+export default class Navbar extends Component {
 
     render() {
         return (
@@ -35,7 +35,7 @@ class Navbar extends Component {
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
                             <input className="form-control mr-sm-2" type="search" placeholder="Find A Raffle" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            <button className="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </div>
 
@@ -51,7 +51,6 @@ class Navbar extends Component {
                                 </div>
                                 <div className="modal-body">
 
-
                                     <form action="" method="POST">
 
                                         <div className="form-group">
@@ -62,18 +61,11 @@ class Navbar extends Component {
                                             <label htmlFor="">Password</label>
                                             <input type="text" className="form-control" id="username" placeholder="Password" />
                                         </div>
-
-
-
-                                        <button type="submit" className="btn btn-primary">Login</button>
+                                        <button type="submit" className="btn btn-dark">Login</button>
                                     </form>
                                 </div>
-
                             </div>
-
                         </div>
-
-
                     </div>
                 </nav>
 
@@ -132,7 +124,7 @@ class Navbar extends Component {
                                         <label htmlFor="">Confirm Password</label>
                                         <input type="text" className="form-control" id="create-account-confirm-password" placeholder="Confirm Password" />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Login</button>
+                                    <button type="submit" className="btn btn-dark">Login</button>
                                 </form>
                             </div>
                         </div>
@@ -144,5 +136,3 @@ class Navbar extends Component {
         )
     }
 }
-
-export default Navbar;

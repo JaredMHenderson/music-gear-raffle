@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import './raffle-creator.css'
 
 export default class RaffleCreator extends Component {
@@ -17,21 +18,20 @@ export default class RaffleCreator extends Component {
 
         }
         this.onKeyUpItemName = this.onKeyUpItemName.bind(this);
-        this.onKeyUpCondition = this.onKeyUpCondition.bind(this);
+        this.onChangeCondition = this.onChangeCondition.bind(this);
         this.onKeyUpimageUrl = this.onKeyUpimageUrl.bind(this);
         this.onKeyUpTicketPrice = this.onKeyUpTicketPrice.bind(this);
         this.onKeyUpMinimumTickets = this.onKeyUpMinimumTickets.bind(this);
-        this.onKeyUpRaffleStart = this.onKeyUpRaffleStart.bind(this);
-        this.onKeyUpRaffleEnd = this.onKeyUpRaffleEnd.bind(this);
-        // this.onClickSubmit = this.onClickSubmit.bind(this);
-
+        this.onChangeRaffleStart = this.onChangeRaffleStart.bind(this);
+        this.onChangeRaffleEnd = this.onChangeRaffleEnd.bind(this);
+        this.onClickSubmit = this.onClickSubmit.bind(this);
     }
 
     onKeyUpItemName(event) {
         this.setState({ ...this.state, itemName: event.target.value });
     }
 
-    onKeyUpCondition(event) {
+    onChangeCondition(event) {
         this.setState({ ...this.state, condition: event.target.value });
     }
 
@@ -45,16 +45,16 @@ export default class RaffleCreator extends Component {
     onKeyUpMinimumTickets(event) {
         this.setState({ ...this.state, minimumTickets: event.target.value });
     }
-    onKeyUpRaffleStart(event) {
+    onChangeRaffleStart(event) {
         this.setState({ ...this.state, raffleStartDate: event.target.value });
     }
 
-    onKeyUpRaffleEnd(event) {
+    onChangeRaffleEnd(event) {
         this.setState({ ...this.state, raffleEndDate: event.target.value });
     }
 
-    onClickSubmit = (event) => {
 
+    onClickSubmit = (event) => {
         fetch("/api/raffleItem", {
             method: 'POST',
             body: JSON.stringify(this.state),
@@ -64,7 +64,6 @@ export default class RaffleCreator extends Component {
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
-
     }
 
     render() {
@@ -124,7 +123,5 @@ export default class RaffleCreator extends Component {
                 <button onClick={this.onClickSubmit} id="submit-button" className="btn btn-dark">Create Raffle</button>
             </div>
         )
-
     }
-
 }
