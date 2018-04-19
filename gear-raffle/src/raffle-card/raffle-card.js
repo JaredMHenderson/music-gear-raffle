@@ -57,7 +57,7 @@ export default class RaffleCard extends Component {
         this.setState({ itemId, goToItem: true });
     }
       
-      
+      //comment test
 
 
 
