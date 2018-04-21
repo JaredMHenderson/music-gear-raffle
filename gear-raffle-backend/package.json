@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "firebase": "^4.12.1",
     "mongoose": "^5.0.12"
   },
   "devDependencies": {},
@@ -16,7 +17,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "type": "service_account",
   "project_id": "music-gear-raffle",
   "private_key_id": "8adf64b25082bc3bcfcfa037ad2d700ee62bd4d2",
@@ -28,4 +28,3 @@
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fpw47%40music-gear-raffle.iam.gserviceaccount.com"
 }
-
