@@ -27,7 +27,7 @@ class RunRaffleCard extends Component {
 
     runRaffle = (event) => {
         console.log("click worked");
-        let participants = this.props.raffle.participants;
+        const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id, participants } = this.props.raffle;
         let winner = participants[Math.floor(Math.random()*participants.length)];
         console.log(winner.email);
 
