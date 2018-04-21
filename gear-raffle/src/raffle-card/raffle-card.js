@@ -7,12 +7,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import keys from '../config/keys.js';
 import axios from 'axios';
 
-
-
-
-
-
-
 export default class RaffleCard extends Component {
     constructor(props) {
         super(props);
@@ -54,21 +48,28 @@ export default class RaffleCard extends Component {
         // use moment to format raffleEndDate
         return (
             <div className="card">
-                <img className="card-img-top" src={imageUrl} alt="Item Pic" />
+              <div className="imageContainer">
+                <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
+              </div>
                 <div className="card-body">
-                    <h5 className="card-title"><span>Item:</span>{itemName}</h5>
-                    <p><span>Condition:</span>{condition}</p>
-                    <p><span>Ticket Price: $</span>{ticketPrice}</p>
-                    <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
-                    <p><span>Raffle Start Date: </span>{raffleStartDate}</p>
-                    <p><span>Raffle End Date: </span>{raffleEndDate}</p>
-                    <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
-
+                    <h5 id="title" className="card-title">{itemName}</h5>
+                      <p id="body">
+                        <span>Condition: </span>{condition}
+                          <br/>
+                        <span>Ticket Price: $</span>{ticketPrice}
+                          <br/>
+                        <span>Mininum Required Tickets: </span>{minimumTickets}
+                          <br/>
+                        <span>Raffle Start: </span>{raffleStartDate}
+                          <br/>
+                        <span>Raffle End: </span>{raffleEndDate}
+                      </p>
+                    <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>Buy Ticket</button>
 
                     <StripeCheckout
                         token={this.onToken}
                         stripeKey={keys.stripePublishableKey}
-                        amount={ticketPrice} />
+                        amount={ticketPrice * 100} />
                 </div>
             </div>
 
