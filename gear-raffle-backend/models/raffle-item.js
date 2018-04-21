@@ -7,5 +7,8 @@ module.exports = mongoose.model('raffleItems', new mongoose.Schema({
     minimumTickets: { type: Number },
     raffleStartDate: { type: Date },
     raffleEndDate: { type: Date },
+    participants: [{
+      name: {type: String},
+      email: {type: String}
+}],
 }));
-
