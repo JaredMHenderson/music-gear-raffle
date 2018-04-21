@@ -23,7 +23,6 @@ export default class RaffleCard extends Component {
 
     _getItem(event) {
 
-        console.log("Clicked!!");
         let itemId = event.target.attributes["data-id"].value;
         console.log("These are props from card:", itemId);
         console.log(this.props);
