@@ -52,7 +52,7 @@ class App extends Component {
             <Route exact path='/' component={() => <RaffleList raffles={this.state.raffleItems} history={this.history} />} />
             <Route exact path='/main' component={Main} />
             <Route exact path='/create-raffle' component={RaffleCreator} />
-            <Route path='/item' component={() => <ViewItem history={this.history} />} />
+            <Route path='/item/:id' component={({ match }) => <ViewItem history={this.history} raffle={this.state.raffleItems.filter(item => {return match.params.id === item._id})[0]}/>} />
             <Route exact path='/admin' component={() => <RunRaffle raffles={this.state.raffleItems} />} />
 
             {/* <Route exact path='/login' component={Login} /> */}

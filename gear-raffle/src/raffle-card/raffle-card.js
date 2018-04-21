@@ -18,16 +18,6 @@ export default class RaffleCard extends Component {
         };
     };
 
-    onToken(token) {
-        console.log(token);
-        const userData = token;
-        axios.post('/api/stripe', token).then(response => {
-            console.log('\n \n \n \n \n \n \nLookie the response', response);
-            console.log(`We are in business, ${response.email}`);
-
-        });
-    };
-
     _getItem(event) {
 
         console.log("Clicked!!");
@@ -70,6 +60,7 @@ export default class RaffleCard extends Component {
                         token={this.onToken}
                         stripeKey={keys.stripePublishableKey}
                         amount={ticketPrice * 100} />
+
                 </div>
             </div>
 

@@ -12,7 +12,7 @@ module.exports = app => {
         // res.sendStatus(200);
         // const token = req.body.token;
         const charge = stripe.charges.create({
-            amount: 1000,
+            amount: req.body.price,
             currency: 'usd',
             description: '$5 for 5 credits',
             source: req.body.id
