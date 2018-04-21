@@ -10,9 +10,6 @@ import axios from 'axios';
 
 
 
-
-
-
 export default class RaffleCard extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +24,7 @@ export default class RaffleCard extends Component {
     onToken(token) {
         console.log(token);
         const userData = token;
-        axios.post('/api/stripe', token).then(response => {
+        axios.post('/api/stripe', { ...token, price: this.props.raffle.ticketPrice * 100 }).then(response => {
             console.log('\n \n \n \n \n \n \nLookie the response', response);
             console.log(`We are in business, ${response.email}`);
 
@@ -66,9 +63,9 @@ export default class RaffleCard extends Component {
 
 
                     <StripeCheckout
-                        token={this.onToken}
+                        token={this.onToken.bind(this)}
                         stripeKey={keys.stripePublishableKey}
-                        amount={ticketPrice} />
+                        amount={ticketPrice * 100} />
                 </div>
             </div>
 
