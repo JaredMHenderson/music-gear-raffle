@@ -35,7 +35,7 @@ module.exports = (app) => {
     app.post('/api/raffleItem/participant/:id', (req, res) => {
 
       const { name, email, ticketNumber } = req.body;
-       RaffleItem.findOneAndUpdate({ _id: req.params.id }, {$push: {participants: {name: name, email: email}}}, (err, record) => {
+       RaffleItem.findOneAndUpdate({ _id: req.params.id }, {$push: {participants: {email: email}}}, (err, record) => {
         if(err) {
           console.log(err)
         }
