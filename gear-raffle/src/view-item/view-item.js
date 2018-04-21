@@ -12,6 +12,7 @@ class ViewItem extends Component
         imageUrl: null,
         itemName: null,
         condition: null,
+     
         ticketPrice: null,
         itemId: null,
         name: null,
@@ -52,7 +53,9 @@ class ViewItem extends Component
               imageUrl: result.data[0].imageUrl,
               itemName: result.data[0].itemName,
               condition: result.data[0].condition,
-              ticketPrice: result.data[0].ticketPrice
+              ticketPrice: result.data[0].ticketPrice,
+              raffleStartDate: result.data[0].raffleStartDate,
+              raffleEndDate: result.data[0].raffleEndDate
             });
           },
           (error) => {
@@ -93,32 +96,35 @@ class ViewItem extends Component
             <div className="view-item">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12 item-title b-white">
-                    <h1>{ itemName }</h1>
-                    <p>Listed by me</p>
+                  <div className="col-md-1">
+                  </div>
+                  <div className="col-md-10">
+                    <h4 className="headline">{ itemName }</h4>
+                      <h6 className="condition">Condition: { condition }</h6>
+                  </div>
+                  <div className="col-md-1">
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-8 item-description">
+                  <div className="col-md-1">
+                  </div>
+                  <div className="col-md-6">
                     <img className="imgContainer" src={ imageUrl } />
                   </div>
+                  <div className="col-md-4">
+                    <h5 className="subHead">Raffle Details</h5>
+                      <p className="raffleDets">Price per ticket: { ticketPrice }</p>
+                      <p className="raffleDets">Raffle Start Date: { raffleStartDate }</p>
+                      <p className="raffleDets">Raffle End Date: { raffleEndDate }</p>
+                      <button className="btn btn-dark" data-toggle="modal" data-target="#buyTicketModal">Add to Cart</button>
 
-                  <div className="col-md-4 item-price">
-                    <h1>Price:{ ticketPrice }</h1>
-                    <button className="btn btn-secondary" data-toggle="modal" data-target="#buyTicketModal">Add To Cart</button>
+          
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-8 b-white">
-                    <h2>Condition { condition }</h2>
-                    <p>Some text</p>
+                  <div className="col-md-1">
                   </div>
-
                 </div>
               </div>
-
             </div>
-            {/* <!-- Buy Raffle Ticket Modal --> */}
 
 
             <div className="modal fade" id="buyTicketModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
