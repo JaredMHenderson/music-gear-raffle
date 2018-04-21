@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './view-item.css';
 import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
+import keys from '../config/keys.js';
 
 class ViewItem extends Component
 {
@@ -12,28 +14,41 @@ class ViewItem extends Component
         imageUrl: null,
         itemName: null,
         condition: null,
-     
+
         ticketPrice: null,
         itemId: null,
         name: null,
-        email: null
+        email: null,
+        raffleStartDate: null,
+        raffleEndDate: null
 
       }
 
-      this.onKeyUpParticipantName = this.onKeyUpParticipantName.bind(this);
-      this.onKeyUpParticipantEmail = this.onKeyUpParticipantEmail.bind(this);
 
     }
 
-    onKeyUpParticipantName(event) {
-        this.setState({ ...this.state, name: event.target.value });
-        console.log(this.state.name);
-    }
+    onToken(token) {
+        console.log(token);
+        console.log(token.email);
+        let idFromPath = window.location.pathname.split("/");
+        let itemId = idFromPath[2];
+        console.log("here is id: ", itemId);
 
-    onKeyUpParticipantEmail(event) {
-        this.setState({ ...this.state, email: event.target.value });
-        console.log(this.state.email);
-    }
+        const userData = token;
+        axios.post('/api/stripe', { ...token, price: this.props.raffle.ticketPrice * 100 }).then(response => {
+            console.log('\n \n \n \n \n \n \nLookie the response', response);
+            console.log(`We are in business, ${response.email}`);
+
+        });
+
+        axios.post('/api/raffleItem/participant/' + itemId, { ...token, email: token.email }).then(response => {
+            console.log('Success', response);
+
+        });
+
+
+    };
+
 
     componentWillMount() {
 
@@ -66,21 +81,6 @@ class ViewItem extends Component
         )
     }
 
-    onConfirmClick(event){
-      event.preventDefault();
-      let buttonId = document.getElementById("buy-confirm").getAttribute("data-id");
-      console.log(buttonId);
-
-
-      axios({
-        method: 'post',
-        url: '/api/raffleItem/participant/' + buttonId,
-        data: {
-          name: this.state.name,
-          email: this.state.email
-              }
-            }).bind(this);
-    }
 
 
 
@@ -89,7 +89,7 @@ class ViewItem extends Component
 
     render()
     {
-      const { itemName, imageUrl, ticketPrice, condition } = this.state;
+      const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate } = this.state;
       // if(itemName && imageUrl && ticketPrice && condition) {
         return (
           <div>
@@ -114,11 +114,15 @@ class ViewItem extends Component
                   <div className="col-md-4">
                     <h5 className="subHead">Raffle Details</h5>
                       <p className="raffleDets">Price per ticket: { ticketPrice }</p>
-                      <p className="raffleDets">Raffle Start Date: { raffleStartDate }</p>
-                      <p className="raffleDets">Raffle End Date: { raffleEndDate }</p>
-                      <button className="btn btn-dark" data-toggle="modal" data-target="#buyTicketModal">Add to Cart</button>
+                      <p className="raffleDets">Raffle Start Date:{ raffleStartDate }</p>
+                      <p className="raffleDets">Raffle End Date:{ raffleEndDate }</p>
 
-          
+                      <StripeCheckout
+                          token={this.onToken.bind(this)}
+                          stripeKey={keys.stripePublishableKey}
+                          amount={ticketPrice * 100} />
+
+
                   </div>
                   <div className="col-md-1">
                   </div>
@@ -127,36 +131,7 @@ class ViewItem extends Component
             </div>
 
 
-            <div className="modal fade" id="buyTicketModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Create Account</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            // <form action="">
-                                <div className="form-group">
-                                    <label htmlFor="">Name</label>
-                                    <input type="text" onKeyUp={this.onKeyUpParticipantName} className="form-control" id="buy-ticket-name" placeholder="John Doe" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="">Email</label>
-                                    <input type="text" onKeyUp={this.onKeyUpParticipantEmail} className="form-control" id="buy-ticket-email" placeholder="Email" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="">Number of Tickets</label>
-                                    <input type="text" className="form-control" id="buy-ticket-number" placeholder="Number of tickets" />
-                                </div>
-                                <button onClick={this.onConfirmClick} id="buy-confirm" data-id={this.state.itemId} className="btn btn-secondary">Proceed to Payment</button>
-                            // </form>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
 
             </div>
 

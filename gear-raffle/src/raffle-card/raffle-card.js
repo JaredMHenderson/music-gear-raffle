@@ -21,16 +21,6 @@ export default class RaffleCard extends Component {
         };
     };
 
-    onToken(token) {
-        console.log(token);
-        const userData = token;
-        axios.post('/api/stripe', { ...token, price: this.props.raffle.ticketPrice * 100 }).then(response => {
-            console.log('\n \n \n \n \n \n \nLookie the response', response);
-            console.log(`We are in business, ${response.email}`);
-
-        });
-    };
-
     _getItem(event) {
 
         console.log("Clicked!!");
@@ -59,13 +49,9 @@ export default class RaffleCard extends Component {
                     <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
                     <p><span>Raffle Start Date: </span>{raffleStartDate}</p>
                     <p><span>Raffle End Date: </span>{raffleEndDate}</p>
-                    <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>Buy Ticket</button>
+                    <button onClick={this._getItem} className="btn btn-primary" data-id={_id}>View Details</button>
 
 
-                    <StripeCheckout
-                        token={this.onToken.bind(this)}
-                        stripeKey={keys.stripePublishableKey}
-                        amount={ticketPrice * 100} />
                 </div>
             </div>
 
