@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import './raffle-creator.css'
 
+
 export default class RaffleCreator extends Component {
 
     constructor(props) {
@@ -15,6 +16,7 @@ export default class RaffleCreator extends Component {
             minimumTickets: null,
             raffleStartDate: null,
             raffleEndDate: null,
+
 
         }
         this.onKeyUpItemName = this.onKeyUpItemName.bind(this);
@@ -32,6 +34,7 @@ export default class RaffleCreator extends Component {
     }
 
     onChangeCondition(event) {
+
         this.setState({ ...this.state, condition: event.target.value });
     }
 
@@ -54,6 +57,7 @@ export default class RaffleCreator extends Component {
     }
 
 
+
     onClickSubmit = (event) => {
         fetch("/api/raffleItem", {
             method: 'POST',
@@ -64,11 +68,13 @@ export default class RaffleCreator extends Component {
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
+
     }
 
     render() {
         return (
             <div className="container raffleCreator">
+
                 <div className="row">
                     <div className="col-md-10 headline">
                         <h4>What are you selling?</h4>

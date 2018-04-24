@@ -5,12 +5,12 @@ import StripeCheckout from 'react-stripe-checkout';
 import keys from '../config/keys.js';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-class ViewItem extends Component
-{
-    constructor(props)
-    {
-      super(props);
-      this.state = {
+
+
+class ViewItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
         imageUrl: null,
         itemName: null,
@@ -23,11 +23,11 @@ class ViewItem extends Component
         raffleStartDate: null,
         raffleEndDate: null,
 
-      }
-
+    }
 
 
     }
+
 
 
 
@@ -81,9 +81,12 @@ class ViewItem extends Component
             if(error) {
               console.log(error);
             }
+
           }
-        )
-    }
+        }
+      )
+  }
+
 
 
 
@@ -142,6 +145,10 @@ class ViewItem extends Component
 
 
             </div>
+          </div>
+
+        </div>
+
 
         );
       // }
@@ -152,6 +159,7 @@ class ViewItem extends Component
       //   );
       // }
     }
+  }
 }
 
 export default ViewItem;
