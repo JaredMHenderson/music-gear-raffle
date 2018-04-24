@@ -28,8 +28,14 @@ class RunRaffleCard extends Component {
     runRaffle = (event) => {
         console.log("click worked");
         const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id, participants } = this.props.raffle;
-        let winner = participants[Math.floor(Math.random()*participants.length)];
-        console.log(winner.email);
+        if (participants.length < minimumTickets) {
+          alert("Minimum tickets amount is not met");
+        }
+        else {
+          let winner = participants[Math.floor(Math.random()*participants.length)];
+          console.log(winner.email);
+        }
+
 
 
 

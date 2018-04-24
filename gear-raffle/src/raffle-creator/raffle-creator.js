@@ -113,12 +113,12 @@ export default class RaffleCreator extends Component {
                 <div className="form-group">
                     <label for="example-date-input" className="col-2 col-form-label">Raffle Start Date</label>
 
-                    <input onChange={this.onKeyUpRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
+                    <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
                 </div>
                 <div className="form-group">
                     <label for="example-date-input" className="col-2 col-form-label">Raffle End Date</label>
 
-                    <input onChange={this.onKeyUpRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
+                    <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
                 </div>
                 <button onClick={this.onClickSubmit} id="submit-button" className="btn btn-dark">Create Raffle</button>
             </div>
