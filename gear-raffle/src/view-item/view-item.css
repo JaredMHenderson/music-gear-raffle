@@ -1,29 +1,31 @@
-.imgContainer {
-  background-color: white;
-  margin-top: 1%;
-  padding: 1%
+.item {
+  padding-top: 20px;
 }
 
-img {
+.headline {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.condition {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.imgContainer {
   width: 100%;
 }
 
-.view-item {
-  background-color: #d3d3d3;
+.subHead {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
 }
 
-.b-white {
-  background-color: white;
-  /* margin: 1%; */
-
-}
-
-.item-price {
-  background-color: white;
-  margin-top: 1%;
-  display: inline-block;
-}
-
-.item-description {
-  /* margin-right: 1%; */
+.raffleDets {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
 }

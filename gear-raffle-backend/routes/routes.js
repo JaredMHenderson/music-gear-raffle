@@ -1,11 +1,9 @@
 var admin = require('firebase-admin');
 const RaffleItem = require('../models/raffle-item')
 
-module.exports = (app) =>
-{
+module.exports = (app) => {
     app.get('/api/raffle-items', (req, res) => {
-        RaffleItem.find({},(err, raffleItems) =>
-        {
+        RaffleItem.find({}, (err, raffleItems) => {
             if (err) {
                 res.status(500).json((err));
             } else {
@@ -34,14 +32,49 @@ module.exports = (app) =>
 
         });
     });
+
+    app.post('/api/raffleItem/participant/:id', (req, res) => {
+
+      const { name, email, ticketNumber } = req.body;
+       RaffleItem.findOneAndUpdate({ _id: req.params.id }, {$push: {participants: {email: email}}}, (err, record) => {
+        if(err) {
+          console.log(err)
+        }
+        else {
+          console.log(record);
+          res.json(record);
+        }
+      });
+    });
+    //
+    // app.post('/api/raffleItem/participant/:id', (req, res) => {
+    // function arrayBuilder(obj, ticketNumber) {
+    //     const results = [];
+    //     for(let i = 0; i < ticketNumber; i++) {
+    //       results.push(obj);
+    //     }
+    //     return results;
+    //   }
+    //   const { name, email, ticketNumber } = req.body;
+    //    RaffleItem.findOneAndUpdate({ _id: req.params.id }, {$push: {participants: ...arrayBuilder({name, email}, ticketNumber)}}, (err, record) => {
+    //     if(err) {
+    //       console.log(err)
+    //     }
+    //     else {
+    //       console.log(record);
+    //       res.json(record);
+    //     }
+    //   });
+    // });
+
     app.put('/api/raffleItem/:id', (req, res) => {
-       RaffleItem.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true}, (err, raffleItem) =>{
-           if (err) {
-               res.status(500).json((err));
-           } else {
-               res.status(201).json(raffleItem);
-           }
-       });
+        RaffleItem.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, raffleItem) => {
+            if (err) {
+                res.status(500).json((err));
+            } else {
+                res.status(201).json(raffleItem);
+            }
+        });
     });
 
     app.delete('/api/raffleItem/:id', (req, res) => {
@@ -52,7 +85,7 @@ module.exports = (app) =>
                 res.status(201).json(raffleItem);
             }
         });
-        res.end('Request received: delte - api/raffleItem/:id');
+        res.end('Request received: delete - api/raffleItem/:id');
     });
 
     
