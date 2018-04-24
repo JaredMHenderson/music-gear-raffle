@@ -70,19 +70,19 @@ export default class RaffleCreator extends Component {
         return (
             <div className="container raffleCreator">
                 <div className="row">
-                    <div className="col-md-10">
-                        <h4>Tell us about what you&#39;re selling</h4>
+                    <div className="col-md-10 headline">
+                        <h4>What are you selling?</h4>
                         <hr />
                     </div>
                 </div>
                 <div className="row">
                     <div className="form-group col-md-5">
-                        <label htmlFor="inputEmail4">Item Name</label>
-                        <input onKeyUp={this.onKeyUpItemName} type="text" className="form-control" id="inputEmail" placeholder="eg: Classic Series '60s Stratocaster" />
+                        <label id="inputLabel" htmlFor="inputEmail4">Item Name</label>
+                        <input id="inputPlace" onKeyUp={this.onKeyUpItemName} type="text" className="form-control" id="inputEmail" placeholder="eg: Classic Series '60s Stratocaster" />
                     </div>
                     <div className="form-group col-md-5">
-                        <label for="condition">Condition</label>
-                        <select onChange={this.onKeyUpCondition} className="form-control" id="condition">
+                        <label id="inputLabel" htmlFor="condition">Condition</label>
+                        <select id="inputPlace" onChange={this.onChangeCondition} className="form-control" id="condition">
                             <option>Brand New</option>
                             <option>Mint</option>
                             <option>Excellent</option>
@@ -96,29 +96,32 @@ export default class RaffleCreator extends Component {
                 </div>
                 <div className="row">
                     <div className="form-group col-md-10">
-                        <label htmlFor="inputAddress">Image URL</label>
+                        <label id="inputLabel" htmlFor="inputAddress">Image URL</label>
                         <input onKeyUp={this.onKeyUpimageUrl} type="text" className="form-control" id="inputAddress" placeholder="Image URL" />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="form-group col-md-10">
-                        <label htmlFor="inputAddress2">Ticket Price</label>
-                        <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputAddress2" placeholder="Ticket Price" />
-                    </div>
+                  <div className="form-group col-md-5">
+                    <label id="inputLabel" htmlFor="inputPrice">Ticket Price</label>
+                      <input onKeyUp={this.onKeyUpTicketPrice} type="text" className="form-control" id="inputAddress2" placeholder="Ticket Price" />
+                  </div>
+                  <div className="form-group col-md-5">
+                    <label id="inputLabel" htmlFor="minimumTickets">Minimum Tickets</label>
+                      <input onKeyUp={this.onKeyUpMinimumTickets} className="form-control" type="number" placeholder="100" id="minimumTickets" />
+                  </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="minimumTickets">Minimum Tickets</label>
-                    <input onKeyUp={this.onKeyUpMinimumTickets} className="form-control" type="number" placeholder="100" id="minimumTickets" />
-                </div>
-                <div className="form-group">
-                    <label for="example-date-input" className="col-2 col-form-label">Raffle Start Date</label>
+      
 
-                    <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
-                </div>
-                <div className="form-group">
-                    <label for="example-date-input" className="col-2 col-form-label">Raffle End Date</label>
+                <div className="row">
+                  <div className="form-group col-md-5">
+                    <label id="inputLabel" htmlFor="startDate">Raffle Start Date</label>
+                      <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
+                  </div>
+                  <div className="form-group col-md-5">
+                    <label id="inputLabel" htmlFor="endDate">Raffle End Date</label>
+                      <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
+                  </div>
 
-                    <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
                 </div>
                 <button onClick={this.onClickSubmit} id="submit-button" className="btn btn-dark">Create Raffle</button>
             </div>
