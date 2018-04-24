@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 // import 'moment';
 
 
+import keys from '../config/keys.js';
+
 import axios from 'axios';
 
 export default class RaffleCard extends Component {
@@ -36,9 +38,10 @@ export default class RaffleCard extends Component {
         // use moment to format raffleEndDate
         return (
             <div className="card">
-                <div className="imageContainer">
-                    <img className="card-img-top image" src={imageUrl} alt="Item Pic" />
-                </div>
+
+              <div className="imageContainer justify-content-center">
+                <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
+              </div>
                 <div className="card-body">
                     <h5 id="title" className="card-title">{itemName}</h5>
                     <p id="body">
@@ -53,7 +56,6 @@ export default class RaffleCard extends Component {
                         <span>Raffle End: </span>{raffleEndDate}
                     </p>
                     <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>Buy Ticket</button>
-
 
                 </div>
             </div>

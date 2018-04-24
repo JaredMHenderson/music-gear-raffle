@@ -1,0 +1,36 @@
+.card {
+    width: 300px;
+    margin: 10px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 52, 50, 0.64);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 52, 50, 0.64);
+    box-shadow:         4px 4px 5px 0px rgba(50, 52, 50, 0.64);
+    display: inline-block;
+}
+
+.imageContainer {
+    height: 298px;
+    width: 298px;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.card-img-top {
+    max-height: 298px;
+    max-width: 298px;
+    height: auto;
+    width: auto;
+}
+
+#title {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}

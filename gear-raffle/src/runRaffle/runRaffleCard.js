@@ -48,17 +48,24 @@ class RunRaffleCard extends Component {
         }
 
         return (
-            <div className="card">
-                <img className="card-img-top" src={imageUrl} alt="Item Pic" />
-                <div className="card-body">
-                    <h5 className="card-title"><span>Item:</span>{itemName}</h5>
-                    <p><span>Condition:</span>{condition}</p>
-                    <p><span>Ticket Price: $</span>{ticketPrice}</p>
-                    <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
-                    <p><span>Number of Participants: </span>{participants.length}</p>
-                    <p><span>Raffle Start Date: </span>{raffleEndDate}</p>
-                    <p><span>Raffle End Date: </span>{raffleEndDate}</p>
 
+          <div className="card">
+            <div className="imageContainer justify-content-center">
+              <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
+            </div>
+              <div className="card-body">
+                  <h5 id="title" className="card-title">{itemName}</h5>
+                    <p id="body">
+                      <span>Condition: </span>{condition}
+                        <br/>
+                      <span>Ticket Price: $</span>{ticketPrice}
+                        <br/>
+                      <span>Mininum Required Tickets: </span>{minimumTickets}
+                        <br/>
+                      <span>Raffle Start: </span>{raffleStartDate}
+                        <br/>
+                      <span>Raffle End: </span>{raffleEndDate}
+                    </p>
                     <button onClick={this.runRaffle} className="btn btn-primary" data-id={_id}>Run Raffle</button>
                 </div>
             </div>
