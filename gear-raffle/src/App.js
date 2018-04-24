@@ -54,6 +54,8 @@ class App extends Component {
             <Route exact path='/create-raffle' component={RaffleCreator} />
             <Route path='/item/:id' component={({ match }) => <ViewItem history={this.history} raffle={this.state.raffleItems.filter(item => {return match.params.id === item._id})[0]}/>} />
             <Route exact path='/admin' component={() => <RunRaffle raffles={this.state.raffleItems} />} />
+          
+
 
             {/* <Route exact path='/login' component={Login} /> */}
             {/* <Route exact path='/signout' component={Signout} /> */}

@@ -12,6 +12,7 @@ class RunRaffle extends Component {
 
 
     render() {
+      console.log('Props on Raffle', this.props);
         return (
             <div className="raffle-list">
                 {

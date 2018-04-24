@@ -3,7 +3,9 @@ import './raffle-card.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // import 'moment';
 
+
 import keys from '../config/keys.js';
+
 import axios from 'axios';
 
 export default class RaffleCard extends Component {
@@ -19,7 +21,6 @@ export default class RaffleCard extends Component {
 
     _getItem(event) {
 
-        console.log("Clicked!!");
         let itemId = event.target.attributes["data-id"].value;
         console.log("These are props from card:", itemId);
         console.log(this.props);
@@ -37,22 +38,23 @@ export default class RaffleCard extends Component {
         // use moment to format raffleEndDate
         return (
             <div className="card">
+
               <div className="imageContainer justify-content-center">
                 <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
               </div>
                 <div className="card-body">
                     <h5 id="title" className="card-title">{itemName}</h5>
-                      <p id="body">
+                    <p id="body">
                         <span>Condition: </span>{condition}
-                          <br/>
+                        <br />
                         <span>Ticket Price: $</span>{ticketPrice}
-                          <br/>
+                        <br />
                         <span>Mininum Required Tickets: </span>{minimumTickets}
-                          <br/>
+                        <br />
                         <span>Raffle Start: </span>{raffleStartDate}
-                          <br/>
+                        <br />
                         <span>Raffle End: </span>{raffleEndDate}
-                      </p>
+                    </p>
                     <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>Buy Ticket</button>
 
                 </div>
