@@ -8,7 +8,10 @@ module.exports = (app, fb) => {
     authUtilities.doCreateUserWithEmailAndPassword(req.body.email, req.body.password, fb).then((data) => {
       console.log(data);
       res.json(data);
+    }).catch((error) => {
+      res.status(401).json({ error });
     });
+
   });
 
   app.post('/api/auth/signIn', (req, res) => {
@@ -16,7 +19,10 @@ module.exports = (app, fb) => {
     authUtilities.doSignInWithEmailAndPassword(req.body.email, req.body.password, fb).then((data) => {
       console.log(data);
       res.json(data);
-    });
+    })
+      .catch((error) => {
+        res.status(401).json({ error });
+      });
   });
 
   app.get('/api/auth/signOut', (req, res) => {
