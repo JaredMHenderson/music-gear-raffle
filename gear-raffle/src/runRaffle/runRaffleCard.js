@@ -60,8 +60,10 @@ class RunRaffleCard extends Component {
                         <br/>
                       <span>Ticket Price: $</span>{ticketPrice}
                         <br/>
-                      <span>Mininum Required Tickets: </span>{minimumTickets}
+                      <span>Minimum Required Tickets: </span>{minimumTickets}
                         <br/>
+                        <span>Number of Participants: </span>{participants.length}
+                          <br/>
                       <span>Raffle Start: </span>{raffleStartDate}
                         <br/>
                       <span>Raffle End: </span>{raffleEndDate}
