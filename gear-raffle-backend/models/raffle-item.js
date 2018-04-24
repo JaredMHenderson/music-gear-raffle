@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 module.exports = mongoose.model('raffleItems', new mongoose.Schema({
     imageUrl: { type: String, default: '' },
     itemName: { type: String, default: 'Instrument' },
@@ -10,5 +11,5 @@ module.exports = mongoose.model('raffleItems', new mongoose.Schema({
     participants: [{
       name: {type: String},
       email: {type: String}
-}],
+    }],
 }));

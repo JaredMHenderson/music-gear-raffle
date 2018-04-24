@@ -10,21 +10,16 @@ class ViewItem extends Component
     {
       super(props);
       this.state = {
-
         imageUrl: null,
         itemName: null,
         condition: null,
-
         ticketPrice: null,
         itemId: null,
         name: null,
         email: null,
         raffleStartDate: null,
         raffleEndDate: null
-
       }
-
-
     }
 
     onToken(token) {
@@ -38,17 +33,11 @@ class ViewItem extends Component
         axios.post('/api/stripe', { ...token, price: this.props.raffle.ticketPrice * 100 }).then(response => {
             console.log('\n \n \n \n \n \n \nLookie the response', response);
             console.log(`We are in business, ${response.email}`);
-
         });
-
         axios.post('/api/raffleItem/participant/' + itemId, { ...token, email: token.email }).then(response => {
             console.log('Success', response);
-
         });
-
-
     };
-
 
     componentWillMount() {
 
@@ -81,12 +70,6 @@ class ViewItem extends Component
         )
     }
 
-
-
-
-
-
-
     render()
     {
       const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate } = this.state;
@@ -114,8 +97,8 @@ class ViewItem extends Component
                   <div className="col-md-4">
                     <h5 className="subHead">Raffle Details</h5>
                       <p className="raffleDets">Price per ticket: { ticketPrice }</p>
-                      <p className="raffleDets">Raffle Start Date:{ raffleStartDate }</p>
-                      <p className="raffleDets">Raffle End Date:{ raffleEndDate }</p>
+                      <p className="raffleDets">Raffle Start: { raffleStartDate }</p>
+                      <p className="raffleDets">Raffle End: { raffleEndDate }</p>
 
                       <StripeCheckout
                           token={this.onToken.bind(this)}
