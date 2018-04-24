@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import './raffle-card.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import 'moment';
+import Moment from 'react-moment';
 
 import keys from '../config/keys.js';
 import axios from 'axios';
+
+Moment.globalFormat = 'MMMM Do YYYY';
 
 export default class RaffleCard extends Component {
     constructor(props) {
@@ -25,8 +27,6 @@ export default class RaffleCard extends Component {
         console.log(this.props);
         this.setState({ itemId, goToItem: true });
     }
-
-
 
     render() {
         const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id } = this.props.raffle;
@@ -49,11 +49,11 @@ export default class RaffleCard extends Component {
                           <br/>
                         <span>Mininum Required Tickets: </span>{minimumTickets}
                           <br/>
-                        <span>Raffle Start: </span>{raffleStartDate}
+                        <span>Raffle Start: </span><Moment>{raffleStartDate}</Moment>
                           <br/>
-                        <span>Raffle End: </span>{raffleEndDate}
+                        <span>Raffle End: </span><Moment>{raffleEndDate}</Moment>
                       </p>
-                    <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>Buy Ticket</button>
+                    <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>View </button>
 
                 </div>
             </div>

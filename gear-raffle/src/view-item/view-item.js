@@ -3,6 +3,9 @@ import './view-item.css';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import keys from '../config/keys.js';
+import Moment from 'react-moment';
+
+Moment.globalFormat = 'MMMM Do YYYY';
 
 class ViewItem extends Component
 {
@@ -97,8 +100,8 @@ class ViewItem extends Component
                   <div className="col-md-4">
                     <h5 className="subHead">Raffle Details</h5>
                       <p className="raffleDets">Price per ticket: { ticketPrice }</p>
-                      <p className="raffleDets">Raffle Start: { raffleStartDate }</p>
-                      <p className="raffleDets">Raffle End: { raffleEndDate }</p>
+                      <p className="raffleDets">Raffle Start: <Moment>{ raffleStartDate }</Moment></p>
+                      <p className="raffleDets">Raffle End: <Moment>{ raffleEndDate }</Moment></p>
 
                       <StripeCheckout
                           token={this.onToken.bind(this)}

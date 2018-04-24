@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import './runRaffleCard.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import $ from 'jquery';
+import Moment from 'react-moment';
 
-
-
+Moment.globalFormat = 'MMMM Do YYYY';
 
 class RunRaffleCard extends Component {
 
@@ -51,11 +50,11 @@ class RunRaffleCard extends Component {
                         <br/>
                       <span>Mininum Required Tickets: </span>{minimumTickets}
                         <br/>
-                      <span>Raffle Start: </span>{raffleStartDate}
+                      <span>Raffle Start: </span><Moment>{raffleStartDate}</Moment>
                         <br/>
-                      <span>Raffle End: </span>{raffleEndDate}
+                      <span>Raffle End: </span><Moment>{raffleEndDate}</Moment>
                     </p>
-                    <button onClick={this.runRaffle} className="btn btn-primary" data-id={_id}>Run Raffle</button>
+                    <button onClick={this.runRaffle} className="btn-sm btn-dark" data-id={_id}>Run Raffle</button>
                 </div>
             </div>
 
