@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import './main.css';
 
-class Main extends Component {
-render() {
+export default class Main extends Component {
+  render() {
     return (
-        <div>
-            HELLOW
-            </div>
-    );
-}
+      <div>
+
+      </div>
+    )
+  }
 }
 
-export default Main;
+
+
+

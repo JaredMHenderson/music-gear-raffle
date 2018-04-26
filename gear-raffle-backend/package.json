@@ -1,0 +1,32 @@
+{
+  "name": "gear-raffle-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "firebase": "^4.12.1",
+    "mongoose": "^5.0.12",
+    "stripe": "^5.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"yarn start\" \"cd ../gear-raffle; yarn start\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "service_account",
+  "project_id": "music-gear-raffle",
+  "private_key_id": "8adf64b25082bc3bcfcfa037ad2d700ee62bd4d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8KwdYtSP4HEuK\nW15OB6Un7877bVSUucJyK5xDe3K0/MMzQ1n2jXsn+VXyYsYoHj9RpwUtCKPW2uM0\nQaLLgmeOpxb4s2mquoh8JE8M2GQHLyUN/ATtg22QUQzjuYoJLp0amLF0Tz+IRc4K\npRF6+feO9PWrU57oS1R79/PtfLykdTaCPh1vJUQPbPRJt/M80D8XTAtMh2DkE0au\n04hL7b1wE9aMYnO3PDqLvVU4vho3AiD4O6tdIk94ndLfiICAnn/Llxn9zAbAwc8+\npfHvuivgasQql8uKJV0Bw4TLk9J7L3l8YxAluvennnVtFQgKQb8/Oo/FeEuNtvkH\niyEZgw/LAgMBAAECggEAFmzgXsOTylWA8TfLaOxDVBuh5NgWTPVIhbfJ00cKmCRJ\nlTnxJk+dPlnaUt1PtWdJb49CsCfH8uq6SjeKUcu0UM18EN68+KJrcrQXEbZWUX7e\nYSjIY5AWxizKpvctSsPZ6FoLSAvLzA9Zq24Zw7i3trtd7fG0zgVwR6f407RafRTg\nr8oZaDHiVcdG3/YtEFBMogFmrT0WVEXAONTLu1Fg47L1JIm1PxbBbvq4e5Gol4Zy\nTY+/ElaenRVFA8tEArwC5YAdSLfPjcfVoptMundxJ665Pddjhe9zrnUuKE4Mb4bV\n/2Poy+CwHpn4jUFowrGnyy670NRxWQOLdLbQTEiqSQKBgQDl4xqtqdOZG8csqu8c\nToQGo7cMds41XjgprSde5jR3XjrQRTUoG5i0Wtw8CPXCoN1YiHh+Vjebu5NHa5jK\nYdU7bQzzihlUdscO6i7RacQmNnKab8gv0aruiZ4Lea6woGuLhDuqo3mkkR/5T8hY\nUPW9zdtQr7NkwzVDz2hqycj4EwKBgQDRisZgxBSSVNNuqEWJWXbyQDhla54T/nhs\nfJEm4uBzepb4CW5dEWuwWZ2DxBdT9WxjfCqpuNZRF1xAyUKw9T3Mmp5QkznO5lfK\nMpOhq4A0EjwtL32bL4Gr2Jhu7iZVPtbTCT/00G1orZLqdxNLYCGosJBlCbtTM0vb\ndfnOi99waQKBgCuPJsT1QvTmAI2ELh6M+hNP/iVMdbJDEh1DhAxFTne30SkZlALv\nh7XU6ZoukHK6jHZ0FXDK4WqO1k9YIfFnLEJAXY3gAwCwKPO4h/qCMfqToo+E0sfM\n0Li2Ns4x1ln9a6NaAPxKUYhPP2G8LlgdrxKx6PaW9EUJgBRDPqPNbFklAoGAVpID\nC493AE3TXHBg6jHwFn25zwz7Lj9/+TIttecd3BfVr3wWAJVl7GHZ1cp56NIIicGO\nzrfys2X3UzzTNNDdS17F8Xwh8fzwYDUtESoNuXWfLvvj5O1noVvG/m2doLJphp7X\nsYk66nhrrjqr2gRJY6wuu8+deO5EdNL09gSLt6ECgYA+3pumvznwNJfHKUIefvOT\n8h8dR1YvbqbKlxJC/U4DJJtmwa16PdSdikEuxgnduXHFqfrMr7DOjG8jBKMWW/r/\nRSFlqX665b7snwCchGnacR5GNP/rAolcauHo0qNv/ffTZI1y6PanfHvUTWRBbEOP\nRcKOBRD0DgyWDpIA5XfD/Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fpw47@music-gear-raffle.iam.gserviceaccount.com",
+  "client_id": "115024820911656338369",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fpw47%40music-gear-raffle.iam.gserviceaccount.com"
+}

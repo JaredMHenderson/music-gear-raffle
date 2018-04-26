@@ -1,0 +1,31 @@
+.item {
+  padding-top: 20px;
+}
+
+.headline {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.condition {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.imgContainer {
+  width: 100%;
+}
+
+.subHead {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.raffleDets {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
