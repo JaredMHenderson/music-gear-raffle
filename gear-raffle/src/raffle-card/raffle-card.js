@@ -8,6 +8,7 @@ import axios from 'axios';
 
 Moment.globalFormat = 'MMMM Do YYYY';
 
+
 export default class RaffleCard extends Component {
     constructor(props) {
         super(props);

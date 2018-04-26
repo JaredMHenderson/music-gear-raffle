@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/firestore": "^0.13.1",
     "axios": "^0.18.0",
+    "firebase": "^4.12.1",
+    "firebaseui": "^2.7.0",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
     "moment": "^2.22.1",
@@ -16,9 +19,10 @@
   },
   "proxy": "http://localhost:3000",
   "scripts": {
+    "deploy": "firebase deploy",
     "start": "react-scripts start",
     "clean": "rm -rf ../gear-raffle-backend/build",
-    "build": "react-scripts build",
+    "build": "rm -rf ../gear-raffle-backend/build && react-scripts build",
     "postbuild": "mv ./build ../gear-raffle-backend",
     "complete": "npm run clean && react-scripts build && rm -r ../gear-raffle-backend/public/ && cp -r build/ ../gear-raffle-backend/public",
     "test": "react-scripts test --env=jsdom",
