@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './view-item.css';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
@@ -9,31 +9,21 @@ import Moment from 'react-moment';
 Moment.globalFormat = 'MMMM Do YYYY';
 
 
-class ViewItem extends Component
-{
-    constructor(props)
-    {
-      super(props);
-      this.state = {
-        imageUrl: null,
-        itemName: null,
-        condition: null,
-        ticketPrice: null,
-        itemId: null,
-        name: null,
-        email: null,
-        raffleStartDate: null,
-        raffleEndDate: null
-      }
-
-
+class ViewItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageUrl: null,
+      itemName: null,
+      condition: null,
+      ticketPrice: null,
+      itemId: null,
+      name: null,
+      email: null,
+      raffleStartDate: null,
+      raffleEndDate: null
     }
-
-
   }
-
-
-
 
 
   onToken(token) {
@@ -55,13 +45,9 @@ class ViewItem extends Component
 
     });
 
-
   };
 
-
-
   componentWillMount() {
-
     let idFromPath = window.location.pathname.split("/");
     let itemId = idFromPath[2];
     console.log("here is id: ", itemId);
@@ -87,17 +73,9 @@ class ViewItem extends Component
           if (error) {
             console.log(error);
           }
-
-
         }
       )
   }
-
-
-
-
-
-
 
 
 
@@ -137,33 +115,14 @@ class ViewItem extends Component
                   token={this.onToken.bind(this)}
                   stripeKey={keys.stripePublishableKey}
                   amount={ticketPrice * 100} />
-
-
-
-
               </div>
               <div className="col-md-1">
               </div>
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
-
-
-
     );
-    // }
-    // else {
-    //   return (
-    //     <div>
-    //     <p>Loading.......</p></div>
-    //   );
-    // }
   }
 }
 
