@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import './runRaffleCard.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import $ from 'jquery';
+import Moment from 'react-moment';
 
-
-
+Moment.globalFormat = 'MMMM Do YYYY';
 
 class RunRaffleCard extends Component {
 
@@ -35,10 +34,6 @@ class RunRaffleCard extends Component {
           let winner = participants[Math.floor(Math.random()*participants.length)];
           console.log(winner.email);
         }
-
-
-
-
     }
 
     render() {
@@ -48,18 +43,24 @@ class RunRaffleCard extends Component {
         }
 
         return (
-            <div className="card">
-                <img className="card-img-top" src={imageUrl} alt="Item Pic" />
-                <div className="card-body">
-                    <h5 className="card-title"><span>Item:</span>{itemName}</h5>
-                    <p><span>Condition:</span>{condition}</p>
-                    <p><span>Ticket Price: $</span>{ticketPrice}</p>
-                    <p><span>Mininum Required Tickets: </span>{minimumTickets}</p>
-                    <p><span>Number of Participants: </span>{participants.length}</p>
-                    <p><span>Raffle Start Date: </span>{raffleEndDate}</p>
-                    <p><span>Raffle End Date: </span>{raffleEndDate}</p>
-
-                    <button onClick={this.runRaffle} className="btn btn-primary" data-id={_id}>Run Raffle</button>
+          <div className="card">
+            <div className="imageContainer justify-content-center">
+              <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
+            </div>
+              <div className="card-body">
+                  <h5 id="title" className="card-title">{itemName}</h5>
+                    <p id="body">
+                      <span>Condition: </span>{condition}
+                        <br/>
+                      <span>Ticket Price: $</span>{ticketPrice}
+                        <br/>
+                      <span>Mininum Required Tickets: </span>{minimumTickets}
+                        <br/>
+                      <span>Raffle Start: </span><Moment>{raffleStartDate}</Moment>
+                        <br/>
+                      <span>Raffle End: </span><Moment>{raffleEndDate}</Moment>
+                    </p>
+                    <button onClick={this.runRaffle} className="btn-sm btn-dark" data-id={_id}>Run Raffle</button>
                 </div>
             </div>
 

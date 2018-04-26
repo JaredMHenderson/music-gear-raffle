@@ -4,29 +4,34 @@ import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import keys from '../config/keys.js';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Moment from 'react-moment';
+
+Moment.globalFormat = 'MMMM Do YYYY';
 
 
+class ViewItem extends Component
+{
+    constructor(props)
+    {
+      super(props);
+      this.state = {
+        imageUrl: null,
+        itemName: null,
+        condition: null,
+        ticketPrice: null,
+        itemId: null,
+        name: null,
+        email: null,
+        raffleStartDate: null,
+        raffleEndDate: null
+      }
 
-class ViewItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-      imageUrl: null,
-      itemName: null,
-      condition: null,
-
-      ticketPrice: null,
-      itemId: null,
-      name: null,
-      email: null,
-      raffleStartDate: null,
-      raffleEndDate: null,
 
     }
 
 
   }
+
 
 
 
@@ -52,6 +57,7 @@ class ViewItem extends Component {
 
 
   };
+
 
 
   componentWillMount() {
@@ -94,6 +100,8 @@ class ViewItem extends Component {
 
 
 
+
+
   render() {
     const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate, itemId } = this.state;
 
@@ -122,8 +130,8 @@ class ViewItem extends Component {
               <div className="col-md-4">
                 <h5 className="subHead">Raffle Details</h5>
                 <p className="raffleDets">Price per ticket: {ticketPrice}</p>
-                <p className="raffleDets">Raffle Start Date:{raffleStartDate}</p>
-                <p className="raffleDets">Raffle End Date:{raffleEndDate}</p>
+                <p className="raffleDets">Raffle Start Date:<Moment>{raffleStartDate}</Moment></p>
+                <p className="raffleDets">Raffle End Date:<Moment>{raffleEndDate}</Moment></p>
 
                 <StripeCheckout
                   token={this.onToken.bind(this)}
@@ -139,6 +147,7 @@ class ViewItem extends Component {
             </div>
           </div>
         </div>
+
 
 
 

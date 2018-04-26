@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import './raffle-creator.css'
 
 
@@ -55,8 +54,6 @@ export default class RaffleCreator extends Component {
     onChangeRaffleEnd(event) {
         this.setState({ ...this.state, raffleEndDate: event.target.value });
     }
-
-
 
     onClickSubmit = (event) => {
         fetch("/api/raffleItem", {
@@ -116,20 +113,17 @@ export default class RaffleCreator extends Component {
                         <input onKeyUp={this.onKeyUpMinimumTickets} className="form-control" type="number" placeholder="100" id="minimumTickets" />
                     </div>
                 </div>
-
-
                 <div className="row">
                     <div className="form-group col-md-5">
                         <label id="inputLabel" htmlFor="startDate">Raffle Start Date</label>
-                        <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
+                        <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="12-25-2018" id="raffleStartDate" />
                     </div>
                     <div className="form-group col-md-5">
                         <label id="inputLabel" htmlFor="endDate">Raffle End Date</label>
-                        <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
+                        <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="12-25-2018" id="raffleEndDate" />
                     </div>
-
                 </div>
-                <a onClick={this.onClickSubmit} id="submit-button" href="/" className="btn btn-dark" >Create Raffle </a>
+                  <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button" href="/">Create Raffle</a>
             </div>
         )
     }
