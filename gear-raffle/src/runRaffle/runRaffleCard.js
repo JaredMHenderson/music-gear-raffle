@@ -26,12 +26,18 @@ class RunRaffleCard extends Component {
 
     runRaffle = (event) => {
         console.log("click worked");
-
+        const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id, participants } = this.props.raffle;
+        if (participants.length < minimumTickets) {
+          alert("Minimum tickets amount is not met");
+        }
+        else {
+          let winner = participants[Math.floor(Math.random()*participants.length)];
+          console.log(winner.email);
+        }
     }
 
     render() {
-        const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id } = this.props.raffle;
-
+        const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id, participants } = this.props.raffle;
         if (this.state.goToItem) {
             return <Redirect to={`/item/${this.state.itemId}`} />;
         }

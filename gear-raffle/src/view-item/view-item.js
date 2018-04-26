@@ -3,6 +3,7 @@ import './view-item.css';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import keys from '../config/keys.js';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Moment from 'react-moment';
 
 Moment.globalFormat = 'MMMM Do YYYY';
@@ -23,7 +24,10 @@ class ViewItem extends Component
         raffleStartDate: null,
         raffleEndDate: null
       }
+
     }
+
+
 
     onToken(token) {
         console.log(token);
@@ -75,7 +79,9 @@ class ViewItem extends Component
 
     render()
     {
-      const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate } = this.state;
+      const { itemName, imageUrl, ticketPrice, condition, raffleStartDate, raffleEndDate, itemId } = this.state;
+
+
       // if(itemName && imageUrl && ticketPrice && condition) {
         return (
           <div>
@@ -108,18 +114,13 @@ class ViewItem extends Component
                           stripeKey={keys.stripePublishableKey}
                           amount={ticketPrice * 100} />
 
-
                   </div>
                   <div className="col-md-1">
                   </div>
                 </div>
               </div>
             </div>
-
-
-
-
-            </div>
+          </div>
 
         );
       // }

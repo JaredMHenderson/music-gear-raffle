@@ -20,8 +20,6 @@ export default class RaffleCard extends Component {
     };
 
     _getItem(event) {
-
-        console.log("Clicked!!");
         let itemId = event.target.attributes["data-id"].value;
         console.log("These are props from card:", itemId);
         console.log(this.props);
@@ -34,7 +32,7 @@ export default class RaffleCard extends Component {
         if (this.state.goToItem) {
             return <Redirect to={`/item/${this.state.itemId}`} />;
         }
-        // use moment to format raffleEndDate
+
         return (
             <div className="card">
               <div className="imageContainer justify-content-center">
@@ -42,22 +40,20 @@ export default class RaffleCard extends Component {
               </div>
                 <div className="card-body">
                     <h5 id="title" className="card-title">{itemName}</h5>
-                      <p id="body">
+                    <p id="body">
                         <span>Condition: </span>{condition}
-                          <br/>
+                          <br />
                         <span>Ticket Price: $</span>{ticketPrice}
-                          <br/>
+                          <br />
                         <span>Mininum Required Tickets: </span>{minimumTickets}
                           <br/>
                         <span>Raffle Start: </span><Moment>{raffleStartDate}</Moment>
                           <br/>
                         <span>Raffle End: </span><Moment>{raffleEndDate}</Moment>
-                      </p>
+                    </p>
                     <button onClick={this._getItem} className="btn-sm btn-dark" data-id={_id}>View </button>
-
                 </div>
             </div>
-
         );
     }
 }
