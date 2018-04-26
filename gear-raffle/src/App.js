@@ -19,8 +19,24 @@ class App extends Component {
     this.state = {
       raffleItems: []
     }
-    this.addRaffle = this.addRaffle.bind(this)
+    this.addRaffle = this.addRaffle.bind(this);
     this.history = createHistory();
+    this.updateProps = this.updateProps.bind(this);
+  }
+
+  updateProps = () => {
+    Axios.get("/api/raffle-items/")
+      .then(
+        (result) => {
+          console.log("Here are results: ", result);
+          this.setState({ raffleItems: result.data });
+        },
+        (error) => {
+          if (error) {
+            console.log(error);
+          }
+        }
+      )
   }
 
   componentDidMount() {
@@ -53,8 +69,8 @@ class App extends Component {
             <Route exact path='/main' component={Main} />
             <Route exact path='/create-raffle' component={RaffleCreator} />
             <Route path='/item/:id' component={({ match }) => <ViewItem history={this.history} raffle={this.state.raffleItems.filter(item => {return match.params.id === item._id})[0]}/>} />
-            <Route exact path='/admin' component={() => <RunRaffle raffles={this.state.raffleItems} />} />
-          
+            <Route exact path='/admin' component={() => <RunRaffle raffles={this.state.raffleItems} updateProps={this.updateProps} />} />
+
 
 
             {/* <Route exact path='/login' component={Login} /> */}

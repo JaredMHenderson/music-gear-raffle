@@ -11,4 +11,6 @@ module.exports = mongoose.model('raffleItems', new mongoose.Schema({
     participants: [{
       email: {type: String}
     }],
+    raffleDone: {type: Boolean, default: false},
+    deleted: {type: Boolean, default: false}
 }));

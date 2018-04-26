@@ -124,7 +124,7 @@ export default class RaffleCreator extends Component {
 
                 </div>
 
-                  <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button" href="/">Create Raffle</a>
+                  <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</a>
 
             </div>
         )
