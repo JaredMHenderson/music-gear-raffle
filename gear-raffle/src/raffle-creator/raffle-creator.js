@@ -71,7 +71,6 @@ export default class RaffleCreator extends Component {
     render() {
         return (
             <div className="container raffleCreator">
-
                 <div className="row">
                     <div className="col-md-10 headline">
                         <h4>What are you selling?</h4>

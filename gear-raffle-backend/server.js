@@ -6,9 +6,7 @@ const firebase = require('firebase');
 app.use(express.static('./build'))
 const bodyParser = require('body-parser');
 
-
 const port = 3000;
-
 
 mongoose.connect('mongodb://localhost/raffleItems').then(
     () => {
@@ -27,35 +25,21 @@ mongoose.connect('mongodb://localhost/raffleItems').then(
                 };
                 firebase.initializeApp(config);
                 console.log(`app is listening on port: ${port}`);
-
             }
         });
         console.log('connected to mongo server');
     },
     err => {
         console.log(err);
-
     }
 );
 
-
 app.use(bodyParser.json());
-
 
 require('./routes/billing-routes')(app);
 require('./routes/routes')(app);
 require('./routes/authroutes')(app, firebase);
 
-
-
-
-
 app.get('/', (req, res) => {
     res.sendFile('./build/index.html');
 })
-
-
-
-
-
-

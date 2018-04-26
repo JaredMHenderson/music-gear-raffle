@@ -12,13 +12,11 @@ export default class Navbar extends Component {
   }
 
   onClickLogin(event) {
-
     const email = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
     fetch('/api/auth/signIn', {
       method: 'POST',
-      body: JSON.stringify({ email, password }), // data can be `string` or {object}!
+      body: JSON.stringify({ email, password }),
       headers: new Headers({
         'Content-Type': 'application/json'
       })
@@ -31,11 +29,10 @@ export default class Navbar extends Component {
     const email = document.getElementById('create-acount-email').value;
     const password = document.getElementById('create-account-password').value;
     const passwordConfirm = document.getElementById('create-account-confirm-password').value;
-
     if (password === passwordConfirm) {
       fetch('/api/auth/signUp', {
         method: 'POST',
-        body: JSON.stringify({ email, password }), // data can be `string` or {object}!
+        body: JSON.stringify({ email, password }),
         headers: new Headers({
           'Content-Type': 'application/json'
         })
@@ -46,7 +43,7 @@ export default class Navbar extends Component {
     else {
       alert('Passwords dont match.');
     }
-  }
+  };
 
   render() {
     return (
@@ -94,7 +91,7 @@ export default class Navbar extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="">Password</label>
-                  <input type="text" className="form-control" id="password" placeholder="Password" />
+                  <input type="password" className="form-control" id="password" placeholder="Password" />
                 </div>
                 <button className="btn btn-dark" onClick={this.onClickLogin}>Login</button>
               </div>
@@ -121,11 +118,11 @@ export default class Navbar extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="">Password</label>
-                  <input type="text" className="form-control" id="create-account-password" placeholder="Password" />
+                  <input type="password" className="form-control" id="create-account-password" placeholder="Password" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="">Confirm Password</label>
-                  <input type="text" className="form-control" id="create-account-confirm-password" placeholder="Confirm Password" />
+                  <input type="password" className="form-control" id="create-account-confirm-password" placeholder="Confirm Password" />
                 </div>
                 <button className="btn btn-dark" onClick={this.onClickSignUp}>Create</button>
               </div>
@@ -134,12 +131,8 @@ export default class Navbar extends Component {
           </div>
         </div>
 
-
       </div>
     )
   }
 
-
 }
-
-

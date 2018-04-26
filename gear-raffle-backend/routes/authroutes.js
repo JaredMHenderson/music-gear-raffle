@@ -2,7 +2,6 @@ const authUtilities = require('../../gear-raffle/src/firebase/auth');
 
 module.exports = (app, fb) => {
 
-
   app.post('/api/auth/signup', (req, res) => {
     console.log(authUtilities);
     authUtilities.doCreateUserWithEmailAndPassword(req.body.email, req.body.password, fb).then((data) => {
@@ -48,6 +47,5 @@ module.exports = (app, fb) => {
       res.json(data);
     });
   });
-
 
 }
