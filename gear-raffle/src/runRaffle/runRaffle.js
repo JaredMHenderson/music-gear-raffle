@@ -17,19 +17,19 @@ class RunRaffle extends Component {
 
 
     updateProps = () => {
-      console.log('envoked');
+      console.log('invoked');
       this.setState({hello: 'world'});
     }
 
-    // filterDeleted(arr) {
-    //   const results = [];
-    //   for (let item of arr) {
-    //     if(!item.deleted) {
-    //       results.push(item);
-    //     }
-    //   }
-    //   return results;
-    // }
+    filterDeleted(arr) {
+      const results = [];
+      for (let item of arr) {
+        if(!item.deleted) {
+          results.push(item);
+        }
+      }
+      return results;
+    }
 
 
     render() {
@@ -37,7 +37,7 @@ class RunRaffle extends Component {
         return (
             <div className="raffle-list">
                 {
-                    this.props.raffles.map((raffle, index) => {
+                    this.filterDeleted(this.props.raffles).map((raffle, index) => {
                         return (
                             < RunRaffleCard key={index} raffle={raffle} history={this.props.history} updateProps={this.props.updateProps} />
                         )

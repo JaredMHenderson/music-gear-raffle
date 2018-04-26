@@ -18,18 +18,9 @@ class RunRaffleCard extends Component {
         raffleDone: false
       }
       this.runRaffle = this.runRaffle.bind(this);
+      this.deleteRaffle = this.deleteRaffle.bind(this);
 
     };
-
-
-    // _getItem = (event) => {
-    //
-    //     console.log("Clicked!!");
-    //     let itemId = event.target.attributes["data-id"].value;
-    //     console.log("These are props from card:", itemId);
-    //     console.log(this.props);
-    //     this.setState({ itemId, goToItem: true });
-    // }
 
 
     runRaffle(event) {
@@ -76,7 +67,8 @@ class RunRaffleCard extends Component {
         let itemId = event.target.attributes["data-id"].value;
         axios.put('/api/raffleItem/' + itemId, { deleted: true})
         .then( response => {
-              console.log('Success', response)
+              console.log('Success', response);
+              this.props.updateProps();
             })
               .catch(err => {
                 console.log(err)
@@ -88,10 +80,10 @@ class RunRaffleCard extends Component {
 
     render() {
         const { imageUrl, itemName, condition, minimumTickets, raffleStartDate, raffleEndDate, ticketPrice, _id, participants, raffleDone, deleted } = this.props.raffle;
-        let deletedButton;
+        let deleteButton;
 
         if (!deleted) {
-          deletedButton = <button onClick={this.deleteRaffle} className="btn btn-dark" data-id={_id}>Delete</button>
+          deleteButton = <button onClick={this.deleteRaffle} className="btn btn-dark delete-button" data-id={_id}>Delete</button>
         }
 
         return (
@@ -119,7 +111,7 @@ class RunRaffleCard extends Component {
                         <span>Raffle End: </span>{raffleEndDate}
                       </p>
                       <button onClick={this.runRaffle} className="btn btn-dark" data-id={_id}>{raffleDone ? 'Closed' : 'Run Raffle'}</button>
-                      {deletedButton}
+                      {deleteButton}
                   </div>
               </div>
 
