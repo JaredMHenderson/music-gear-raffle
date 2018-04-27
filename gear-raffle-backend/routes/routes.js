@@ -46,26 +46,7 @@ module.exports = (app) => {
         }
       });
     });
-    //
-    // app.post('/api/raffleItem/participant/:id', (req, res) => {
-    // function arrayBuilder(obj, ticketNumber) {
-    //     const results = [];
-    //     for(let i = 0; i < ticketNumber; i++) {
-    //       results.push(obj);
-    //     }
-    //     return results;
-    //   }
-    //   const { name, email, ticketNumber } = req.body;
-    //    RaffleItem.findOneAndUpdate({ _id: req.params.id }, {$push: {participants: ...arrayBuilder({name, email}, ticketNumber)}}, (err, record) => {
-    //     if(err) {
-    //       console.log(err)
-    //     }
-    //     else {
-    //       console.log(record);
-    //       res.json(record);
-    //     }
-    //   });
-    // });
+
 
     app.put('/api/raffleItem/:id', (req, res) => {
         RaffleItem.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, raffleItem) => {

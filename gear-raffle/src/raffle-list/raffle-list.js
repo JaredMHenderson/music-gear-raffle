@@ -10,16 +10,28 @@ export default class RaffleList extends Component {
     constructor(props) {
         super(props)
     }
-
+    filterDeleted(arr) {
+      const results = [];
+      for (let item of arr) {
+        if(!item.deleted) {
+          results.push(item);
+        }
+      }
+      return results;
+    }
     render() {
-        console.log('here are my props', this.props);
+        console.log('here are my props rafflelist', this.props.raffles);
         return (
             <div className="raffle-list">
                 {
-                    this.props.raffles.map((raffle) => {
+                    this.filterDeleted(this.props.raffles).map((raffle) => {
+
                         return (
+
                             < RaffleCard raffle={raffle} history={this.props.history} />
+
                         )
+
                     })
                 }
             </div>
