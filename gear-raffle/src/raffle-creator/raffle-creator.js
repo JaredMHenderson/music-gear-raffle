@@ -64,7 +64,7 @@ export default class RaffleCreator extends Component {
             })
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));
+            .then(this.props.history.push('/'))
 
     }
 
@@ -123,7 +123,7 @@ export default class RaffleCreator extends Component {
                         <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="12-25-2018" id="raffleEndDate" />
                     </div>
                 </div>
-                <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</a>
+                <button className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</button>
             </div>
         )
     }
