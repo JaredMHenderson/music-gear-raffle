@@ -10,6 +10,7 @@ import ViewItem from './view-item/view-item';
 import RunRaffle from './runRaffle/runRaffle'
 import createHistory from 'history/createBrowserHistory';
 import Axios from 'axios';
+import { Link, withRouter } from "react-router-dom";
 
 
 class App extends Component {
