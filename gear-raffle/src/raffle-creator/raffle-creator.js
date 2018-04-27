@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
 import './raffle-creator.css'
+
 
 export default class RaffleCreator extends Component {
 
@@ -15,6 +15,7 @@ export default class RaffleCreator extends Component {
             minimumTickets: null,
             raffleStartDate: null,
             raffleEndDate: null,
+
 
         }
         this.onKeyUpItemName = this.onKeyUpItemName.bind(this);
@@ -32,6 +33,7 @@ export default class RaffleCreator extends Component {
     }
 
     onChangeCondition(event) {
+
         this.setState({ ...this.state, condition: event.target.value });
     }
 
@@ -53,7 +55,6 @@ export default class RaffleCreator extends Component {
         this.setState({ ...this.state, raffleEndDate: event.target.value });
     }
 
-
     onClickSubmit = (event) => {
         fetch("/api/raffleItem", {
             method: 'POST',
@@ -63,12 +64,14 @@ export default class RaffleCreator extends Component {
             })
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));
+            .then(this.props.history.push('/'))
+
     }
 
     render() {
         return (
             <div className="container raffleCreator">
+
                 <div className="row">
                     <div className="col-md-10 headline">
                         <h4>What are you selling?</h4>
@@ -110,22 +113,18 @@ export default class RaffleCreator extends Component {
                         <input onKeyUp={this.onKeyUpMinimumTickets} className="form-control" type="number" placeholder="100" id="minimumTickets" />
                     </div>
                 </div>
-
-
                 <div className="row">
                     <div className="form-group col-md-5">
                         <label id="inputLabel" htmlFor="startDate">Raffle Start Date</label>
-                        <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="2011-08-19" id="raffleStartDate" />
+                        <input onChange={this.onChangeRaffleStart} className="form-control" type="date" placeholder="12-25-2018" id="raffleStartDate" />
                     </div>
                     <div className="form-group col-md-5">
                         <label id="inputLabel" htmlFor="endDate">Raffle End Date</label>
-                        <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="2011-08-19" id="raffleEndDate" />
+                        <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="12-25-2018" id="raffleEndDate" />
                     </div>
-
                 </div>
 
-                  <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</a>
-
+                <button className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</button>
             </div>
         )
     }

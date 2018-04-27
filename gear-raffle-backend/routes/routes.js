@@ -1,3 +1,4 @@
+var admin = require('firebase-admin');
 const RaffleItem = require('../models/raffle-item')
 
 module.exports = (app) => {
@@ -67,5 +68,8 @@ module.exports = (app) => {
         });
         res.end('Request received: delete - api/raffleItem/:id');
     });
+
+    
+      
 
 }

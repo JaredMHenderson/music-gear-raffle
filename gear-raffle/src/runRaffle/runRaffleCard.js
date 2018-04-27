@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import './runRaffleCard.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
 import axios from 'axios';
 
 
 
 
+import Moment from 'react-moment';
+
+
+Moment.globalFormat = 'MMMM Do YYYY';
 
 class RunRaffleCard extends Component {
 
@@ -54,10 +59,6 @@ class RunRaffleCard extends Component {
         else {
           alert("This Raffle is closed");
         }
-
-
-
-
     }
 
     deleteRaffle = (event) => {
@@ -87,36 +88,30 @@ class RunRaffleCard extends Component {
         }
 
         return (
-          <div>
 
-            <div className="card">
-              <div className="imageContainer justify-content-center">
-                <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
-              </div>
-                <div className="card-body">
-                <h4 className="deleted">{deleted ? 'Deleted': ''}</h4>
-                    <h5 id="title" className="card-title">{itemName}</h5>
-
-                      <p id="body">
-                        <span>Condition: </span>{condition}
-                          <br/>
-                        <span>Ticket Price: $</span>{ticketPrice}
-                          <br/>
-                        <span>Minimum Required Tickets: </span>{minimumTickets}
-                          <br/>
-                          <span>Number of Participants: </span>{participants.length}
-                            <br/>
-                        <span>Raffle Start: </span>{raffleStartDate}
-                          <br/>
-                        <span>Raffle End: </span>{raffleEndDate}
-                      </p>
-                      <button onClick={this.runRaffle} className="btn btn-dark" data-id={_id}>{raffleDone ? 'Closed' : 'Run Raffle'}</button>
+          <div className="card">
+            <div className="imageContainer justify-content-center">
+              <img className="card-img-top image" src={imageUrl} alt="Item Pic"/>
+            </div>
+              <div className="card-body">
+                  <h5 id="title" className="card-title">{itemName}</h5>
+                    <h4 className="deleted">{deleted ? 'Deleted': ''}</h4>
+                    <p id="body">
+                      <span>Condition: </span>{condition}
+                        <br/>
+                      <span>Ticket Price: $</span>{ticketPrice}
+                        <br/>
+                      <span>Minimum Required Tickets: </span>{minimumTickets}
+                        <br/>
+                      <span>Number of Participants: </span>{participants.length}
+                        <br/>
+                      <span>Raffle Start: </span><Moment>{raffleStartDate}</Moment>
+                        <br/>
+                      <span>Raffle End: </span><Moment>{raffleEndDate}</Moment>
+                    </p>
+                   <button onClick={this.runRaffle} className="btn btn-dark" data-id={_id}>{raffleDone ? 'Closed' : 'Run Raffle'}</button>
                       {deleteButton}
-                  </div>
-              </div>
-
-
-
+                </div>
             </div>
 
 
