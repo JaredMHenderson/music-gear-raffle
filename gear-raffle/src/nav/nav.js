@@ -24,8 +24,15 @@ export default class Navbar extends Component {
       })
     }).then(res => res.json())
       .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
-  }
+      .then(response => {
+	  const { history } = this.props;
+	  console.log('Login Success:', response);
+    history.push("/");
+    
+     })
+
+    }
+  
 
   onClickSignUp(event) {
     const email = document.getElementById('create-acount-email').value;
@@ -40,13 +47,14 @@ export default class Navbar extends Component {
           'Content-Type': 'application/json'
         })
       }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
+        .catch(error => console.error('Error', error))
         .then(response => console.log('Success:', response));
     }
     else {
       alert('Passwords dont match.');
     }
   }
+
 
   render() {
     return (

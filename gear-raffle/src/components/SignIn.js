@@ -29,15 +29,27 @@ class SignInForm extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
-    const {
-      email,
-      password,
-    } = this.state;
+  onSubmit = async event => {
+    event.preventDefault();
+  
+    try {
+      await Auth.signIn(this.state.email, this.state.password);
+      this.props.userHasAuthenticated(true);
+      this.props.history.push("/");
+    } catch (e) {
+      alert(e.message);
+    }
+  
 
-    const {
-      history,
-    } = this.props;
+  // onSubmit = (event) => {
+  //   const {
+  //     email,
+  //     password,
+  //   } = this.state;
+
+  //   const {
+  //     history,
+  //   } = this.props;
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {

@@ -14,12 +14,22 @@ class SignUpForm extends Component {
     super(props);
   }
 
-  onSubmit = (event) => {
-        const {
-      username,
-      email,
-      passwordOne,
-    } = this.state;
+  // onSubmit = (event) => {
+  //       const {
+  //     username,
+  //     email,
+  //     passwordOne,
+  //   } = this.state;
+  onSubmit = async event => {
+    event.preventDefault();
+  
+    try {
+      await Auth.signIn(this.state.email, this.state.password);
+      this.props.userHasAuthenticated(true);
+      this.props.history.push("/");
+    } catch (e) {
+      alert(e.message);
+    }
 
     const {
       history,
