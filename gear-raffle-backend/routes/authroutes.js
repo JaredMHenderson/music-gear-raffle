@@ -1,4 +1,4 @@
-const authUtilities = require('../../gear-raffle/src/firebase/auth');
+const authUtilities = require('./auth');
 
 module.exports = (app, fb) => {
 

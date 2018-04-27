@@ -6,11 +6,11 @@ const firebase = require('firebase');
 app.use(express.static('./build'))
 const bodyParser = require('body-parser');
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/raffleItems';
+const port = process.env.PORT || 3000;
 
-const port = 3000;
 
-
-mongoose.connect('mongodb://localhost/raffleItems').then(
+mongoose.connect(MONGODB_URI).then(
     () => {
         app.listen(port, (err) => {
             if (err) {
@@ -40,7 +40,7 @@ mongoose.connect('mongodb://localhost/raffleItems').then(
 
 
 app.use(bodyParser.json());
-
+app.use(express.static('./build'));
 
 require('./routes/billing-routes')(app);
 require('./routes/routes')(app);

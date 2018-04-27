@@ -123,7 +123,7 @@ export default class RaffleCreator extends Component {
                         <input onChange={this.onChangeRaffleEnd} className="form-control" type="date" placeholder="12-25-2018" id="raffleEndDate" />
                     </div>
                 </div>
-                  <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button" href="/">Create Raffle</a>
+                <a className="btn btn-dark" onClick={this.onClickSubmit} id="submit-button">Create Raffle</a>
             </div>
         )
     }
